@@ -26,7 +26,7 @@ const Project = [{
         "#React",
         "#Vite",
         "#tailwind",
-        "#javscript"
+        "#javascript"
     ]
 },
 {
@@ -39,7 +39,7 @@ const Project = [{
     tech: [
         "#html",
         "#css",
-        "#javscript"
+        "#javascript"
     ]
 }, {
     id: 3,
