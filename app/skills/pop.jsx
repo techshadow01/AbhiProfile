@@ -233,7 +233,6 @@ const pop = (prop) => {
                 aria-describedby="modal-modal-description"
                 closeAfterTransition
             >
-                <Slide direction="up" in={open} mountOnEnter unmountOnExit>
                 <Box sx={style} className=" flex flex-col items-center justify-start">
                     <motion.div className=' absolute right-4 top-2 cursor-pointer'
                         whileHover={{ rotate: 90, scale: 1.5 }}
@@ -326,7 +325,6 @@ const pop = (prop) => {
                         }
                     </div>
                 </Box>
-                </Slide >
             </Modal>
 
         </div >
