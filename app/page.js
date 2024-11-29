@@ -6,6 +6,7 @@ import { Typewriter } from 'react-simple-typewriter'
 import Sidebar from "./components/sidebar";
 import { Meteors } from "./ui/meteor";
 import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
 
 const page = () => {
 
