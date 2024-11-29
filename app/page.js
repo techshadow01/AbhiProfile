@@ -56,8 +56,8 @@ const page = () => {
                 I’m a passionate web developer with expertise in front-end and back-end technologies. I specialize in creating responsive, user-friendly websites and web applications using HTML, CSS, JavaScript, and various frameworks. Committed to continuous learning, I focus on delivering efficient and secure solutions.
               </div>
               <div className='flex items-center justify-start gap-3'>
-                <motion.div  ><button className='text-white bg-pink-600 rounded-full border-none glow' >Resume</button></motion.div>
-                <motion.div ><button className='text-white bg-pink-600 rounded-full border-none glow' onClick={() => { Move("contactmove") }}>Hire Me</button></motion.div>
+                 <motion.div><button className='text-white bg-pink-600 rounded-full glow uppercase w-[90px] h-[30px]'  >Resume</button></motion.div>
+                <motion.div> <button className='text-white bg-pink-600 rounded-full glow uppercase w-[90px] h-[30px]' onClick={() => { Move("contactmove") }}>Hire Me</button></motion.div>
 
               </div>
             </div>
