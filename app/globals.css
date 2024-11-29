@@ -21,3 +21,9 @@ body {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(10px);
 }
+
+.divider{
+  height: 1px;
+  width: "100vw";
+  background-color: transparent;
+}

@@ -67,6 +67,7 @@ const page = () => {
         <div id="aboutmove" className='relative w-[100vw] h-[100vh]'>
             <div className='w-[100vw] h-[100px]  flex items-center justify-center'>
                 <motion.div
+                    id="aboutbox"
                     initial={{ x: -500, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
                     viewport={{ once: true, amount: 0.5 }}
@@ -132,7 +133,7 @@ const page = () => {
                 <motion.div
                     initial={{ x: 400, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.3 }}
                     className='w-[50%] h-[100%] '>
                     <DotLottieReact
                         src="https://lottie.host/434ae11f-39d1-4664-939b-b9b8ba611416/4OWn8nRbWG.lottie"

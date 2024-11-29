@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Image from 'next/image';
-import { motion } from "motion/react"
+import { motion, spring } from "motion/react"
 import Fade from '@mui/material/Fade';
 import Zoom from '@mui/material/Zoom';
 import Grow from '@mui/material/Grow';
@@ -253,7 +253,7 @@ const pop = (prop) => {
                                     custom={index}
                                     className='w-[200px] aspect-square  flex flex-col items-center justify-center gap-3'>
                                     <motion.div
-                                        whileHover={{ scale: 1.1, y: -5 }}
+                                        whileHover={{ scale: 1.5, y: -5, transition: { type: "spring", stiffness: 1000 } }}
                                     ><Image src={item.img} alt="" width={60} /></motion.div>
                                     <div className='text-xl text-white capitalize '>{item.name}</div>
                                 </motion.div>
@@ -269,7 +269,7 @@ const pop = (prop) => {
                                     custom={index}
                                     className='w-[200px] aspect-square  flex flex-col items-center justify-center gap-3'>
                                     <motion.div
-                                        whileHover={{ scale: 1.1, y: -5 }}
+                                        whileHover={{ scale: 1.5, y: -5, transition: { type: "spring", stiffness: 1000 } }}
                                     ><Image src={item.img} alt="" width={60} /></motion.div>
                                     <div className='text-xl text-white capitalize '>{item.name}</div>
                                 </motion.div>
@@ -285,7 +285,7 @@ const pop = (prop) => {
                                     custom={index}
                                     key={index} className='w-[200px] aspect-square  flex flex-col items-center justify-center gap-3'>
                                     <motion.div
-                                        whileHover={{ scale: 1.1, y: -5 }}
+                                        whileHover={{ scale: 1.5, y: -5, transition: { type: "spring", stiffness: 1000 } }}
                                     ><Image src={item.img} alt="" width={60} /></motion.div>
                                     <div className='text-xl text-white capitalize '>{item.name}</div>
                                 </motion.div>
@@ -301,7 +301,7 @@ const pop = (prop) => {
                                     custom={index}
                                     key={index} className='w-[200px] aspect-square flex flex-col items-center justify-center gap-3'>
                                     <motion.div
-                                        whileHover={{ scale: 1.1, y: -5 }}
+                                        whileHover={{ scale: 1.5, y: -5, transition: { type: "spring", stiffness: 1000 } }}
                                     ><Image src={item.img} alt="" width={60} /></motion.div>
                                     <div className='text-xl text-white capitalize '>{item.name}</div>
                                 </motion.div>
@@ -317,7 +317,7 @@ const pop = (prop) => {
                                     custom={index}
                                     key={index} className='w-[200px] aspect-square  flex flex-col items-center justify-center gap-3'>
                                     <motion.div
-                                        whileHover={{ scale: 1.1, y: -5 }}
+                                        whileHover={{ scale: 1.5, y: -5, transition: { type: "spring", stiffness: 1000 } }}
                                     ><Image src={item.img} alt="" width={60} /></motion.div>
                                     <div className='text-xl text-white capitalize '>{item.name}</div>
                                 </motion.div>

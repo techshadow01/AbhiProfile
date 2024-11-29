@@ -1,6 +1,6 @@
 'use client'
 
-import { React, useRef } from 'react'
+import { React, useRef, useState } from 'react'
 import Image from 'next/image'
 import Mac from './assets/macbook.png'
 import Chat from './assets/chatbot.png'
@@ -8,25 +8,52 @@ import Alice from './assets/Alice.png'
 import Spotify from './assets/spotify.png'
 import { motion, useScroll, useSpring, useTransform } from "motion/react"
 
+import play from './assets/playbtn.svg'
+import pause from './assets/pause2.svg'
+import Alicevideo from './assets/alicevideo.gif'
+import spotifyvideo from './assets/spotifyvideo.gif'
+import chatvideo from './assets/chatvideo.gif'
+
+
 const Project = [{
     id: 1,
     title: "Alice AI",
     img: Alice,
     desc: "Transform your projects with our AI image generator. Generate high-quality, AI generated images with unparalleled speed and style ",
     live: "https://alice-ai-ten.vercel.app/",
+    video: Alicevideo,
+    tech: [
+        "#React",
+        "#Vite",
+        "#tailwind",
+        "#javscript"
+    ]
 },
 {
     id: 2,
     title: "Spotify Clone",
     img: Spotify,
     desc: "a Music player that offers seamless playback, high-quality sound, and an intuitive interface. It allows easy navigation through playlists, and provides customizable settings.",
-    live: "https://abhiproject.freewebhostmost.com/"
+    live: "https://abhiproject.freewebhostmost.com/",
+    video: spotifyvideo,
+    tech: [
+        "#html",
+        "#css",
+        "#javscript"
+    ]
 }, {
     id: 3,
     title: "AI ChatBot",
     img: Chat,
     desc: "A good AI chatbot which understands user inputs, provides relevant responses, and adapts to different contexts. ",
-    live: "https://chat-bot-delta-six.vercel.app/"
+    live: "https://chat-bot-delta-six.vercel.app/",
+    video: chatvideo,
+    tech: [
+        "#React",
+        "#Vite",
+        "#tailwind",
+        "#motion"
+    ]
 }];
 
 // import Probox from './probox.jsx'
@@ -34,6 +61,8 @@ const Project = [{
 const Single = ({ item }) => {
 
     const ref = useRef();
+
+    const [playback, setplayback] = useState(false)
 
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -45,16 +74,26 @@ const Single = ({ item }) => {
     return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] flex items-center justify-center gap-6 text-white'>
         <motion.div >
             <div className='relative'>
-                <Image className='absolute -z-2 top-2 left-[65px] rounded-[10px] h-[88%]' src={item.img} alt="" width={410} />
+                <Image className='absolute -z-2 top-2 left-[65px] rounded-[10px] h-[88%]' src={playback ? item.video : item.img} alt="" width={410} />
                 <Image className='rounded-[10px]' src={Mac} alt="" width={540} height={400} />
             </div>
         </motion.div>
         <motion.div className='flex items-start justify-center flex-col gap-4 ' style={{ y }}>
             <div className='text-4xl font-bold text-pink-600'>{item.title}</div>
             <div className='max-w-[550px] text-xl'>{item.desc}</div>
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} ><a href={item.live} target='_blank'><button className=' bg-pink-600 text-white rounded-[4px] min-w-[100px] h-10 normal-case glow'>Live</button></a></motion.div>
+            <div className='flex gap-4'>
+                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} ><a href={item.live} target='_blank'><button className=' bg-pink-600 text-white rounded-[4px] min-w-[100px] h-10 normal-case glow'>Live</button></a></motion.div>
+                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}><button className=' bg-pink-600 text-white rounded-full w-10 h-10 normal-case glow flex items-center justify-center' onClick={() => setplayback(!playback)}><Image src={playback ? pause : play} alt="" width={15} /></button></motion.div>
+            </div>
+
+            <div className='flex gap-4'>
+                {(item.tech).map((item1, index1) => {
+                    return <div key={index1} className='p-2 px-4 border border-pink-600 rounded-full '>{item1}</div>
+
+                })}
+            </div>
         </motion.div>
-    </motion.div>
+    </motion.div >
 }
 
 

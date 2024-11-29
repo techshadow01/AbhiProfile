@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import { React, useState } from 'react'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -19,6 +19,13 @@ const page = () => {
             },
         },
     });
+
+    const [form, setform] = useState({ name: "", mail: "", phone: "", sub: "", msg: "" })
+
+    const handleChange = (e) => {
+        setform({ ...form, [e.target.name]: e.target.value })
+        console.log(form)
+    }
 
     return (
         <div id="contactmove" className=' relative w-[100vw] h-[100vh] flex items-center justify-center'>
@@ -53,7 +60,7 @@ const page = () => {
                                             borderColor: "#991B53",
                                         },
                                     },
-                                }} className='border-white' id="outlined-basic" label="Name" variant="outlined" /></div>
+                                }} className='border-white' id="outlined-basic" name="name" value={form.name} label="Name" variant="outlined" onChange={handleChange} /></div>
 
                                 <div><TextField
                                     sx={{
@@ -63,7 +70,7 @@ const page = () => {
                                             },
                                         },
                                     }}
-                                    id="outlined-basic" label="E-mail" variant="outlined" /></div>
+                                    id="outlined-basic" name="mail" value={form.mail} label="E-mail" variant="outlined" onChange={handleChange} /></div>
 
                                 <div><TextField
                                     sx={{
@@ -73,7 +80,7 @@ const page = () => {
                                             },
                                         },
                                     }}
-                                    id="outlined-basic" label="phone no." variant="outlined" /></div>
+                                    id="outlined-basic" name="phone" value={form.phone} label="phone no." variant="outlined" onChange={handleChange} /></div>
 
                                 <div><TextField
                                     sx={{
@@ -83,7 +90,7 @@ const page = () => {
                                             },
                                         },
                                     }}
-                                    id="outlined-basic" label="Subject" variant="outlined" /></div>
+                                    id="outlined-basic" name="sub" value={form.sub} label="Subject" variant="outlined" onChange={handleChange} /></div>
                             </div>
 
                             <div className='flex items-center justify-center'>
@@ -95,11 +102,11 @@ const page = () => {
                                             },
                                         },
                                     }}
-                                    id="outlined-multiline-flexible" label="Your Message" rows={10.4} multiline className='w-[400px]' />
+                                    id="outlined-multiline-flexible" name="msg" value={form.msg} label="Your Message" rows={10.4} multiline className='w-[400px]' onChange={handleChange} />
                             </div>
                         </div>
                     </Box>
-                    <div><Button className='rounded-full glow' variant="contained">Send</Button></div>
+                    <div><Button className='rounded-full glow' variant="contained" >Send</Button></div>
                 </div>
             </ThemeProvider>
 

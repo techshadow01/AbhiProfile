@@ -7,16 +7,14 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-// const home1 = document.getElementById("homemove");
-// const about1 = document.getElementById("aboutmove");
-// const skills1 = document.getElementById("skillsmove");
-// const project1 = document.getElementById("projectsmove");
-// const contact1 = document.getElementById("contactmove");
-
 export default function MTabs() {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    function handleChange1(newValue) {
         setValue(newValue);
     };
 
@@ -31,6 +29,21 @@ export default function MTabs() {
         },
     });
 
+    useEffect(() => {
+        // elementInViewport("Divide1", 0);
+        // elementInViewport("Divide2", 1);
+        //{ elementInViewport("Divide3", 2) }
+        // elementInViewport("Divide4", 3);
+        // elementInViewport("Divide5", 4);
+        //alert("hello")
+    }, [])
+
+    function elementInViewport(gotit, place) {
+        var myElement = document.getElementById(gotit);
+        var bounding = myElement.getBoundingClientRect();
+        if (bounding.top >= 0 && bounding.left >= 0 && bounding.right <= (window.innerWidth || document.documentElement.clientWidth && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight))) { handleChange1(place) }
+    }
+
     const Move = (e) => {
         const yOffset = -50;
         const element = document.getElementById(e);
@@ -38,41 +51,6 @@ export default function MTabs() {
 
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
-
-    // const ElementVisibilityChecker = (elementRef, index) => {
-    //     const [isVisible, setIsVisible] = useState(false);
-
-    //     useEffect(() => {
-    //         const handleScroll = () => {
-    //             if (elementRef) {
-    //                 const rect = elementRef.getBoundingClientRect();
-    //                 const isVisible = (
-    //                     rect.top >= 0 &&
-    //                     rect.left >= 0 &&
-    //                     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    //                     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    //                 );
-    //                 setIsVisible(isVisible);
-    //                 alert(`hello${index}`)
-    //                 // { handleChange }
-    //             }
-    //         };
-
-    //         window.addEventListener('scroll', handleScroll);
-    //         // Initial check on component mount
-    //         handleScroll();
-
-    //         return () => {
-    //             window.removeEventListener('scroll', handleScroll);
-    //         };
-    //     }, []);
-    // };
-
-    // ElementVisibilityChecker(home, "0");
-    // ElementVisibilityChecker(about, "1");
-    // ElementVisibilityChecker(skills, "2");
-    // ElementVisibilityChecker(project, "3");
-    // ElementVisibilityChecker(contact, "4");
 
     return (
         <Box sx={{ width: '100%' }}>

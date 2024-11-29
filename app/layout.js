@@ -29,10 +29,15 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
+        <div id="Divide1" className="divider"></div>
         {children}
+        <div id="Divide2" className="divider"></div>
         <About />
+        <div id="Divide3" className="divider"></div>
         <Skills />
+        <div id="Divide4" className="divider"></div>
         <Projects />
+        <div id="Divide5" className="divider"></div>
         <Contact />
       </body>
     </html >
