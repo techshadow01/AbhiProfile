@@ -64,7 +64,7 @@ const page = () => {
                         whileHover={{ scale: 1, x: -30, transition: { duration: 0.2 } }}
                         whileTap={{ scale: 0.95 }}
                         className=' relative h-[15%] w-[90%] text-white bg-pink-600 bg-opacity-15 border-4 border-pink-600 rounded-[10px] flex items-center justify-center cursor-pointer text-5xl font-bold glow'
-                            style={{ fontSize: 48 }}
+                            sx={{ fontSize: 48 }}
                     > <Pop curid={index} skill={item.name} /></motion.div>
                 })}
             </motion.div>
