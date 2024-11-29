@@ -57,15 +57,15 @@ export default function MTabs() {
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <ThemeProvider theme={theme}>
                     <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                        <Tab className='text-white normal-case' label="Home"
+                        <Tab  sx={{ color: "#FFFFFF" }}  className='text-white normal-case' label="Home"
                             onClick={(e) => { Move("homemove") }} />
-                        <Tab className='text-white normal-case' label="About me"
+                        <Tab sx={{ color: "#FFFFFF" }}  className='text-white normal-case' label="About me"
                             onClick={(e) => { Move("aboutmove") }} />
-                        <Tab className='text-white normal-case' label="Skills"
+                        <Tab  sx={{ color: "#FFFFFF" }} className='text-white normal-case' label="Skills"
                             onClick={(e) => { Move("skillsmove") }} />
-                        <Tab className='text-white normal-case' label="Projects"
+                        <Tab  sx={{ color: "#FFFFFF" }} className='text-white normal-case' label="Projects"
                             onClick={(e) => { Move("projectsmove") }} />
-                        <Tab className='text-white normal-case' label="Contact"
+                        <Tab sx={{ color: "#FFFFFF" }}  className='text-white normal-case' label="Contact"
                             onClick={(e) => { Move("contactmove") }} />
                     </Tabs>
                 </ThemeProvider>
