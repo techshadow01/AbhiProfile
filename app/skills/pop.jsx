@@ -196,7 +196,7 @@ const style1 = {
     height: '100%',
     color: "#FFFFFF",
     backgroundColor: 'transparent',
-     fontSize: "48px"
+     fontSize: "30px"
 }
 
 const Varient = {
