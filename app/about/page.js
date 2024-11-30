@@ -80,9 +80,9 @@ const page = () => {
             <div className='w-[95vw] h-[calc(100%-100px)] flex'>
                 <div className=' relative w-[50%] h-[100%]  flex items-center justify-center flex-col gap-4'>
                     <div className='flex flex-col text-white w-[60%] gap-4 text-center text-xl'>
-                        <div> Hello! I'm Abhishek , a passionate and detail-oriented web developer with a strong focus on creating dynamic, user-friendly websites and web applications. With [X] years of experience in front-end and back-end development, I specialize in transforming ideas into functional, visually appealing online experiences.</div>
+                        <div> Hello! I'm Abhishek , a passionate and detail-oriented web developer with a strong focus on creating dynamic, user-friendly websites and web applications. i have experience in front-end and back-end development, I specialize in transforming ideas into functional, visually appealing online experiences.</div>
 
-                        <div> I have a deep understanding of HTML, CSS, JavaScript, and various frameworks like React, Vue, and Node.js, as well as experience with back-end technologies such as PHP, Python, and Ruby on Rails. I’m constantly exploring new tools and techniques to stay ahead in an ever-evolving industry.</div>
+                        <div> I have a deep understanding of HTML, CSS, JavaScript, and various frameworks like React, Next, and Vite, as well as experience with back-end technologies such as expressjs and Node.js. I’m constantly exploring new tools and techniques to stay ahead in an ever-evolving industry.</div>
                     </div>
                     <div className='text-pink-600 text-3xl font-bold'>
                         MERN STACK
