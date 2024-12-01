@@ -63,13 +63,10 @@ const Single = ({ item }) => {
     const [size, setsize] = useState(true)
 
     useEffect(() => {
-         const x = window.innerWidth;
         {
             x < 630 && setsize(false)
         }
     }, [])
-
-
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start start", "end end"]
@@ -78,6 +75,10 @@ const Single = ({ item }) => {
     const y = useTransform(scrollYProgress, [0, 1], [-250, 250])
     const z = useTransform(scrollYProgress, [0, 1], [0, 0])
 
+    if (typeof window !== "undefined") {
+    const x = window.innerWidth
+    }
+    
     return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] flex items-center justify-center gap-6 text-white max-sm:flex-col max-sm:mt-14'>
         <div className='relative'>
             <Image className='absolute -z-2 top-2 left-[65px] rounded-[10px] h-[88%]' src={playback ? item.video : item.img} alt="" width={410} />
