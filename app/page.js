@@ -21,12 +21,23 @@ const page = () => {
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
+  const useWidth = () => {
+    const [width, setWidth] = useState(0)
+    const handleResize = () => setWidth(window.innerWidth)
+    useEffect(() => {
+      handleResize()
+      window.addEventListener('resize', handleResize)
+      return () => window.removeEventListener('resize', handleResize)
+    }, [])
+    return width
+  }
+
   return (
     <div id="homemove" className='relative w-[100vw] h-[100vh]'>
-      <Meteors
+      {useWidth > 630 && <Meteors
         className="bg-white "
         number={25}
-      />
+      />}
       {/* <div className='absolute w-full h-full flex items-center justify-end'>
         <DotLottieReact
           className='w-[70%] h-[70%]'
