@@ -63,7 +63,10 @@ const Single = ({ item }) => {
     const [size, setsize] = useState(true)
 
     useEffect(() => {
-        { x < 630 && setsize(false) }
+         const x = window.innerWidth;
+        {
+            x < 630 && setsize(false)
+        }
     }, [])
 
 
@@ -74,7 +77,6 @@ const Single = ({ item }) => {
 
     const y = useTransform(scrollYProgress, [0, 1], [-250, 250])
     const z = useTransform(scrollYProgress, [0, 1], [0, 0])
-    const x = window.innerWidth;
 
     return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] flex items-center justify-center gap-6 text-white max-sm:flex-col max-sm:mt-14'>
         <div className='relative'>
