@@ -28,8 +28,8 @@ const page = () => {
     }
 
     return (
-        <div id="contactmove" className=' relative w-[100vw] h-[100vh] flex items-center justify-center'>
-            <div className='flex w-[40%] h-[60%]'>
+        <div id="contactmove" className=' relative w-[100vw] h-[100vh] flex items-center justify-center max-sm:h-auto'>
+            <div className='flex w-[40%] h-[60%] max-sm:hidden'>
                 <DotLottieReact
                     src="https://lottie.host/a900a14f-41fd-41ba-b86c-4eb8335ce58e/30rFYUV1wG.lottie"
                     loop
@@ -37,8 +37,8 @@ const page = () => {
                 />
             </div>
             <ThemeProvider theme={theme}>
-                <div className='w-[50vw] h-[100vh] flex items-center justify-center flex-col gap-4'>
-                    <div className='text-pink-600 text-5xl font-bold'>Contact Me</div>
+                <div className='w-[50vw] h-[100vh] flex items-center justify-center flex-col gap-4 '>
+                    <div className='text-pink-600 text-5xl font-bold max-sm:font-semibold'>Contact Me</div>
 
                     <Box sx={{
                         "& .MuiOutlinedInput-root": {
@@ -51,7 +51,7 @@ const page = () => {
                             color: "#FFFFFF",
                         },
                     }}>
-                        <div className='flex items-center justify-center gap-4'>
+                        <div className='flex items-center justify-center gap-4 max-sm:flex-col'>
                             <div className=' flex flex-col items-center justify-center gap-4'>
 
                                 <div><TextField sx={{
@@ -60,7 +60,7 @@ const page = () => {
                                             borderColor: "#991B53",
                                         },
                                     },
-                                }} className='border-white' id="outlined-basic" name="name" value={form.name} label="Name" variant="outlined" onChange={handleChange} /></div>
+                                }} className='border-white max-sm:w-[80vw]' id="outlined-basic" name="name" value={form.name} label="Name" variant="outlined" onChange={handleChange} /></div>
 
                                 <div><TextField
                                     sx={{
@@ -70,6 +70,7 @@ const page = () => {
                                             },
                                         },
                                     }}
+                                    className='max-sm:w-[80vw]'
                                     id="outlined-basic" name="mail" value={form.mail} label="E-mail" variant="outlined" onChange={handleChange} /></div>
 
                                 <div><TextField
@@ -80,6 +81,7 @@ const page = () => {
                                             },
                                         },
                                     }}
+                                    className='max-sm:w-[80vw]'
                                     id="outlined-basic" name="phone" value={form.phone} label="phone no." variant="outlined" onChange={handleChange} /></div>
 
                                 <div><TextField
@@ -90,6 +92,7 @@ const page = () => {
                                             },
                                         },
                                     }}
+                                    className='max-sm:w-[80vw]'
                                     id="outlined-basic" name="sub" value={form.sub} label="Subject" variant="outlined" onChange={handleChange} /></div>
                             </div>
 
@@ -102,7 +105,7 @@ const page = () => {
                                             },
                                         },
                                     }}
-                                    id="outlined-multiline-flexible" name="msg" value={form.msg} label="Your Message" rows={10.4} multiline className='w-[400px]' onChange={handleChange} />
+                                    id="outlined-multiline-flexible" name="msg" value={form.msg} label="Your Message" rows={10.4} multiline className='w-[400px] max-sm:w-[80vw]' onChange={handleChange} />
                             </div>
                         </div>
                     </Box>

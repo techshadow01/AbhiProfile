@@ -1,6 +1,6 @@
 'use client'
 
-import { React, useRef, useState } from 'react'
+import { React, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Mac from './assets/macbook.png'
 import Chat from './assets/chatbot.png'
@@ -14,7 +14,6 @@ import Alicevideo from './assets/alicevideo.gif'
 import spotifyvideo from './assets/spotifyvideo.gif'
 import chatvideo from './assets/chatvideo.gif'
 
-
 const Project = [{
     id: 1,
     title: "Alice AI",
@@ -26,7 +25,7 @@ const Project = [{
         "#React",
         "#Vite",
         "#tailwind",
-        "#javascript"
+        "#javscript"
     ]
 },
 {
@@ -39,7 +38,7 @@ const Project = [{
     tech: [
         "#html",
         "#css",
-        "#javascript"
+        "#javscript"
     ]
 }, {
     id: 3,
@@ -56,13 +55,17 @@ const Project = [{
     ]
 }];
 
-// import Probox from './probox.jsx'
-
 const Single = ({ item }) => {
 
     const ref = useRef();
 
     const [playback, setplayback] = useState(false)
+    const [size, setsize] = useState(true)
+
+    useEffect(() => {
+        { x < 630 && setsize(false) }
+    }, [])
+
 
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -70,18 +73,18 @@ const Single = ({ item }) => {
     })
 
     const y = useTransform(scrollYProgress, [0, 1], [-250, 250])
+    const z = useTransform(scrollYProgress, [0, 1], [0, 0])
+    const x = window.innerWidth;
 
-    return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] flex items-center justify-center gap-6 text-white'>
-        <motion.div >
-            <div className='relative'>
-                <Image className='absolute -z-2 top-2 left-[65px] rounded-[10px] h-[88%]' src={playback ? item.video : item.img} alt="" width={410} />
-                <Image className='rounded-[10px]' src={Mac} alt="" width={540} height={400} />
-            </div>
-        </motion.div>
-        <motion.div className='flex items-start justify-center flex-col gap-4 ' style={{ y }}>
+    return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] flex items-center justify-center gap-6 text-white max-sm:flex-col max-sm:mt-14'>
+        <div className='relative'>
+            <Image className='absolute -z-2 top-2 left-[65px] rounded-[10px] h-[88%]' src={playback ? item.video : item.img} alt="" width={410} />
+            <Image className='rounded-[10px]' src={Mac} alt="" width={540} height={400} />
+        </div>
+        <motion.div className='flex items-start justify-center flex-col gap-4 max-sm:w-[80vw] max-sm:items-center ' style={size ? { y } : { z }} >
             <div className='text-4xl font-bold text-pink-600'>{item.title}</div>
-            <div className='max-w-[550px] text-xl'>{item.desc}</div>
-            <div className='flex gap-4'>
+            <div className='max-w-[550px] text-xl max-sm:text-center'>{item.desc}</div>
+            <div className='flex gap-4 '>
                 <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} ><a href={item.live} target='_blank'><button className=' bg-pink-600 text-white rounded-[4px] min-w-[100px] h-10 normal-case glow'>Live</button></a></motion.div>
                 <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}><button className=' bg-pink-600 text-white rounded-full w-10 h-10 normal-case glow flex items-center justify-center' onClick={() => setplayback(!playback)}><Image src={playback ? pause : play} alt="" width={15} /></button></motion.div>
             </div>
@@ -110,7 +113,7 @@ const page = () => {
     })
     return (
         <motion.div id="projectsmove" ref={ref}>
-            <div className='sticky top-[50px] flex items-center justify-center flex-col gap-3 '
+            <div className='sticky top-[50px] flex items-center justify-center flex-col gap-3'
                 style={{ zIndex: 10 }}>
                 <div className=' text-white text-center text-5xl flex gap-3'>
                     <div className='text-pink-600 font-bold '>Latest</div>

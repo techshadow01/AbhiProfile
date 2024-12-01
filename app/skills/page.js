@@ -40,8 +40,8 @@ const page = () => {
     }
 
     return (
-        <div id="skillsmove" className='relative w-[100vw] h-[100vh] flex'>
-            <div className='w-[50%] h-[100%] flex flex-col items-center justify-center'>
+        <div id="skillsmove" className='relative w-[100vw] h-[100vh] flex max-sm:flex-col max-sm:h-auto'>
+            <div className='w-[50%] h-[100%] flex flex-col items-center justify-center max-sm:w-full'>
                 <div className='absolute text-white text-5xl font-bold z-1 top-[15%] flex items-center justify-center'>
                     <div className='text-7xl text-pink-600 pb-4'>S</div>
                     <div>kills</div>
@@ -53,21 +53,21 @@ const page = () => {
                 />
             </div>
             <motion.div
-                className='w-[50%] h-[100%] flex flex-col items-center justify-center gap-3 '>
+                className='w-[50%] h-[100%] flex flex-col items-center justify-center gap-3 max-sm:w-screen max-sm:h-auto'>
                 {Tools.map((item, index) => {
                     return <motion.div key={index}
                         variants={Varient1}
                         whileInView="show"
                         viewport={{ once: true }}
                         custom={index}
-                        initial={{ x: 500, opacity: 0 }}
+                        initial={{ x: 400, opacity: 0 }}
                         whileHover={{ scale: 1, x: -30, transition: { duration: 0.2 } }}
                         whileTap={{ scale: 0.95 }}
                         className=' relative h-[15%] w-[90%] text-white bg-pink-600 bg-opacity-15 border-4 border-pink-600 rounded-[10px] flex items-center justify-center cursor-pointer text-5xl font-bold glow'
                     > <Pop curid={index} skill={item.name} /></motion.div>
                 })}
             </motion.div>
-        </div>
+        </div >
     )
 }
 

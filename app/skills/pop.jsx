@@ -183,8 +183,6 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '70%',
-    height: '70%',
     bgcolor: '#121212',
     border: '2px solid #222222',
     borderRadius: '10px',
@@ -196,7 +194,7 @@ const style1 = {
     height: '100%',
     color: "#FFFFFF",
     backgroundColor: 'transparent',
-     fontSize: "30px"
+    fontSize: "40px"
 }
 
 const Varient = {
@@ -217,7 +215,6 @@ const Varient = {
 }
 
 const pop = (prop) => {
-    const cur = prop.skill
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -233,7 +230,8 @@ const pop = (prop) => {
                 aria-describedby="modal-modal-description"
                 closeAfterTransition
             >
-                <Box sx={style} className=" flex flex-col items-center justify-start">
+                {/* <Slide direction="up" in={open} mountOnEnter unmountOnExit> */}
+                <Box sx={style} className=" flex flex-col items-center justify-start w-[70%] h-[70%] max-sm:w-full max-sm:h-full ">
                     <motion.div className=' absolute right-4 top-2 cursor-pointer'
                         whileHover={{ rotate: 90, scale: 1.5 }}
                         onClick={handleClose}
@@ -325,6 +323,7 @@ const pop = (prop) => {
                         }
                     </div>
                 </Box>
+                {/* </Slide > */}
             </Modal>
 
         </div >
