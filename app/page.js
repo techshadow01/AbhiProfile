@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter'
 import Sidebar from "./components/sidebar";
 import { Meteors } from "./ui/meteor";
-import fileSaver from 'file-saver';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -13,13 +12,6 @@ import XIcon from '@mui/icons-material/X';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const page = () => {
-
-  const saveFile = () => {
-    fileSaver.saveAs(
-      process.env.PUBLIC_URL + "/AbhiResume.pdf",
-      "MyCV.pdf"
-    );
-  }
 
   const Move = (e) => {
     const yOffset = -50;
@@ -80,7 +72,7 @@ const page = () => {
                 <a href='https://github.com/techshadow01' target="_blank"> <motion.div className='border-2  rounded-full p-2 flex items-center justify-center  border-pink-600'><MailOutlineIcon className='text-pink-600 cursor-pointer' /></motion.div></a>
               </div>
               <div className='flex items-center justify-start gap-3'>
-                <motion.div><a href="/AbhiResume.pdf" download="My_File.pdf"><button className='text-white bg-pink-600 rounded-full glow uppercase w-[120px] h-[40px]' >Resume</button></a></motion.div>
+                <motion.div><button className='text-white bg-pink-600 rounded-full glow uppercase w-[120px] h-[40px]' >Resume</button></motion.div>
                 <motion.div> <button className='text-white bg-pink-600 rounded-full glow uppercase w-[120px] h-[40px]' onClick={() => { Move("contactmove") }}>Hire Me</button></motion.div>
 
               </div>
