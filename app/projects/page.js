@@ -60,13 +60,18 @@ const Single = ({ item }) => {
     const ref = useRef();
 
     const [playback, setplayback] = useState(false)
-    const [size, setsize] = useState(true)
 
-    useEffect(() => {
-        {
-            x < 630 && setsize(false)
-        }
-    }, [])
+    const useWidth = () => {
+        const [width, setWidth] = useState(0)
+        const handleResize = () => setWidth(window.innerWidth)
+        useEffect(() => {
+            handleResize()
+            window.addEventListener('resize', handleResize)
+            return () => window.removeEventListener('resize', handleResize)
+        }, [])
+        return width
+    }
+
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start start", "end end"]
@@ -75,16 +80,12 @@ const Single = ({ item }) => {
     const y = useTransform(scrollYProgress, [0, 1], [-250, 250])
     const z = useTransform(scrollYProgress, [0, 1], [0, 0])
 
-    if (typeof window !== "undefined") {
-    const x = window.innerWidth
-    }
-    
     return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] flex items-center justify-center gap-6 text-white max-sm:flex-col max-sm:mt-14'>
         <div className='relative'>
             <Image className='absolute -z-2 top-2 left-[65px] rounded-[10px] h-[88%]' src={playback ? item.video : item.img} alt="" width={410} />
             <Image className='rounded-[10px]' src={Mac} alt="" width={540} height={400} />
         </div>
-        <motion.div className='flex items-start justify-center flex-col gap-4 max-sm:w-[80vw] max-sm:items-center ' style={size ? { y } : { z }} >
+        <motion.div className='flex items-start justify-center flex-col gap-4 max-sm:w-[80vw] max-sm:items-center ' style={useWidth < 630 ? { y } : { z }} >
             <div className='text-4xl font-bold text-pink-600'>{item.title}</div>
             <div className='max-w-[550px] text-xl max-sm:text-center'>{item.desc}</div>
             <div className='flex gap-4 '>
