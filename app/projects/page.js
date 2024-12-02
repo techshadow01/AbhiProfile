@@ -61,16 +61,16 @@ const Single = ({ item }) => {
 
     const [playback, setplayback] = useState(false)
 
-    const useWidth = () => {
-        const [width, setWidth] = useState(0)
-        const handleResize = () => setWidth(window.innerWidth)
-        useEffect(() => {
-            handleResize()
-            window.addEventListener('resize', handleResize)
-            return () => window.removeEventListener('resize', handleResize)
-        }, [])
-        return width
-    }
+    // const useWidth = () => {
+    //     const [width, setWidth] = useState(0)
+    //     const handleResize = () => setWidth(window.innerWidth)
+    //     useEffect(() => {
+    //         handleResize()
+    //         window.addEventListener('resize', handleResize)
+    //         return () => window.removeEventListener('resize', handleResize)
+    //     }, [])
+    //     return width
+    // }
 
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -80,12 +80,13 @@ const Single = ({ item }) => {
     const y = useTransform(scrollYProgress, [0, 1], [-250, 250])
     const z = useTransform(scrollYProgress, [0, 1], [0, 0])
 
-    return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] flex items-center justify-center gap-6 text-white max-sm:flex-col max-sm:mt-14'>
+    return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] max-sm:h-auto max-sm:py-5 flex items-center justify-center gap-6 text-white max-sm:flex-col max-sm:mt-14'>
         <div className='relative'>
-            <Image className='absolute -z-2 top-2 left-[65px] rounded-[10px] h-[88%]' src={playback ? item.video : item.img} alt="" width={410} />
-            <Image className='rounded-[10px]' src={Mac} alt="" width={540} height={400} />
+            <Image className='absolute -z-2 top-1.5 left-[12%] rounded-[10px] h-[88%] w-[76%] ' src={playback ? item.video : item.img} alt="" />
+            <Image className='rounded-[10px]' src={Mac} alt="" width={540} />
         </div>
-        <motion.div className='flex items-start justify-center flex-col gap-4 max-sm:w-[80vw] max-sm:items-center ' style={useWidth < 630 ? { y } : { z }} >
+        <motion.div className='flex items-start justify-center flex-col gap-4 max-sm:w-[80vw] max-sm:items-center'>
+            {/* style={useWidth < 630 ? { y } : { z }} */}
             <div className='text-4xl font-bold text-pink-600'>{item.title}</div>
             <div className='max-w-[550px] text-xl max-sm:text-center'>{item.desc}</div>
             <div className='flex gap-4 '>
@@ -93,10 +94,9 @@ const Single = ({ item }) => {
                 <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}><button className=' bg-pink-600 text-white rounded-full w-10 h-10 normal-case glow flex items-center justify-center' onClick={() => setplayback(!playback)}><Image src={playback ? pause : play} alt="" width={15} /></button></motion.div>
             </div>
 
-            <div className='flex gap-4'>
+            <div className='flex gap-4 max-sm:border max-sm:border-pink-600 rounded-full max-sm:px-4'>
                 {(item.tech).map((item1, index1) => {
-                    return <div key={index1} className='p-2 px-4 border border-pink-600 rounded-full '>{item1}</div>
-
+                    return <div key={index1} className='p-2 px-4 border border-pink-600 rounded-full max-sm:border-none max-sm:px-0'>{item1}</div>
                 })}
             </div>
         </motion.div>
@@ -128,7 +128,6 @@ const page = () => {
             <motion.div className='flex items-center justify-center flex-col'>
                 {Project.map((item) => {
                     return <Single item={item} key={item.id} />
-
                 })}
             </motion.div>
         </motion.div >
