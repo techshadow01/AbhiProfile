@@ -31,8 +31,8 @@ const page = () => {
                 x: 0,
                 opacity: 1,
                 transition: {
-                    duration: 1,
-                    delay: 0.05 * index,
+                    duration: 0.5,
+                    delay: 0.1 * index,
                 },
                 type: useSpring,
             }
@@ -60,7 +60,7 @@ const page = () => {
                         whileInView="show"
                         viewport={{ once: true }}
                         custom={index}
-                        initial={{ x: 400, opacity: 0 }}
+                        initial={{ x: 200, opacity: 0 }}
                         whileHover={{ scale: 1, x: -30, transition: { duration: 0.2 } }}
                         whileTap={{ scale: 0.95 }}
                         className=' relative h-[15%] w-[90%] text-white bg-pink-600 bg-opacity-15 border-4 border-pink-600 rounded-[10px] flex items-center justify-center cursor-pointer text-5xl font-bold glow'
