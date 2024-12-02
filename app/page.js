@@ -4,7 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter'
 import Sidebar from "./components/sidebar";
-import { Meteors } from "./ui/meteor";
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -21,31 +20,8 @@ const page = () => {
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
-  const useWidth = () => {
-    const [width, setWidth] = useState(0)
-    const handleResize = () => setWidth(window.innerWidth)
-    useEffect(() => {
-      handleResize()
-      window.addEventListener('resize', handleResize)
-      return () => window.removeEventListener('resize', handleResize)
-    }, [])
-    return width
-  }
-
   return (
     <div id="homemove" className='relative w-[100vw] h-[100vh]'>
-      {useWidth > 630 && <Meteors
-        className="bg-white "
-        number={25}
-      />}
-      {/* <div className='absolute w-full h-full flex items-center justify-end'>
-        <DotLottieReact
-          className='w-[70%] h-[70%]'
-          src="https://lottie.host/afeee050-4970-45a1-b87b-e31761c46375/RB2L62vF9J.lottie"
-          loop
-          autoplay
-        />
-      </div> */}
       <div className='h-[50px]'></div>
 
       {/* home */}
@@ -57,7 +33,7 @@ const page = () => {
           {/* home-left-in */}
           <div className=' relative w-[80%] h-[80%] text-white max-sm:w-[90%]'>
             <div className='flex items-center justify-center flex-col gap-5 h-full '>
-              <div className='text-7xl font-bold gap-3 flex max-sm:text-5xl'>
+              <div className='text-7xl font-bold gap-3 flex max-sm:text-4xl'>
                 <div>Hi, its</div>
                 <div className='text-pink-600 cursor-pointer'> Abhishek</div>
               </div>
