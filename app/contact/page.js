@@ -28,7 +28,7 @@ const page = () => {
     }
 
     return (
-        <div id="contactmove" className=' relative w-[100vw] h-[100vh] flex items-center justify-center max-sm:h-auto'>
+        <div id="contactmove" className=' w-[100vw] h-[100vh] flex items-center justify-center max-sm:h-auto'>
             <div className='flex w-[40%] h-[60%] max-sm:hidden'>
                 <DotLottieReact
                     src="https://lottie.host/a900a14f-41fd-41ba-b86c-4eb8335ce58e/30rFYUV1wG.lottie"
@@ -38,7 +38,7 @@ const page = () => {
             </div>
             <ThemeProvider theme={theme}>
                 <div className='w-[50vw] h-[100vh] flex items-center justify-center flex-col gap-4 '>
-                    <div className='text-pink-600 text-5xl font-bold max-sm:font-semibold'>Contact Me</div>
+                    <div className='text-pink-600 text-5xl font-bold max-sm:font-bold max-sm:text-4xl'>Contact Me</div>
 
                     <Box sx={{
                         "& .MuiOutlinedInput-root": {
