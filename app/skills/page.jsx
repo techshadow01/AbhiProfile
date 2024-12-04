@@ -221,7 +221,7 @@ const Other = [
 
 const skills = () => {
     return (
-        <motion.div className='flex max-sm:flex-col my-36 max-sm:my-0 max-sm:mb-20'>
+        <motion.div  id="skillsmove" className='flex max-sm:flex-col my-36 max-sm:my-0 max-sm:mb-20'>
             <div className='w-[30vw] max-sm:w-auto'>
                 <motion.div
                     className='sticky max-sm:static top-[40vh]  text-6xl border-8 w-[300px] flex items-center justify-center uppercase font-bold text-white border-pink-600 p-3 m-auto'>Skills</motion.div>
