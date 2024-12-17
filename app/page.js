@@ -11,6 +11,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import Scroll from './components/assets/scroll.svg'
 
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
