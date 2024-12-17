@@ -36,7 +36,6 @@ export default function RootLayout({ children }) {
         <About />
         <div id="Divide3" className="divider"></div>
         <Skills />
-        {/* <Skills /> */}
         <div id="Divide4" className="divider"></div>
         <Projects />
         <div id="Divide5" className="divider"></div>
