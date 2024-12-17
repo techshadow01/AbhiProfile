@@ -12,6 +12,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 const page = () => {
 
   const Move = (e) => {
