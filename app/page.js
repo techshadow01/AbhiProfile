@@ -11,7 +11,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import Scroll from './components/assets/scroll.svg'
 
 const page = () => {
 
@@ -76,11 +75,7 @@ const page = () => {
         </div>
         <Sidebar />
       </div>
- <motion.div
-        animate={{ y: [-5, 5], transition: { duration: 1, repeat: Infinity, repeatType: "mirror", delay: 1 } }}
-        className='absolute bottom-3 left-[49vw] opacity-60 max-sm:hidden'>
-        <Image src={Scroll} alt="" width={50} />
-      </motion.div>
+
     </div>
   )
 }
