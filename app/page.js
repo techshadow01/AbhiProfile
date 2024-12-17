@@ -3,6 +3,7 @@
 import Homebg from './ui/homebgs'
 
 import React from 'react'
+import Image from 'next/image';
 import { easeIn, easeInOut, motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter'
 import Sidebar from "./components/sidebar";
@@ -11,6 +12,9 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import Scroll from './components/assets/scroll.svg'
+
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const page = () => {
 
@@ -31,7 +35,7 @@ const page = () => {
       <div className='relative w-full h-[93.4vh] flex items-center justify-center '>
 
         {/* home-left */}
-        <div className='w-[calc(100vw-100px)] ml-[60px] pl-[100px] max-sm:w-screen max-sm:ml-0 max-sm:pl-[30px] '>
+        <div className='w-[calc(100vw-100px)] ml-[60px] pl-[100px] max-sm:w-screen max-sm:ml-0 max-sm:pl-[30px] flex'>
 
           {/* home-left-in */}
           <motion.div className=' relative w-[80%] h-[80%] text-white max-sm:w-[90%]'
@@ -70,13 +74,28 @@ const page = () => {
 
               </div>
             </div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ transition: { duration: 1.5, delay: 1 }, opacity: 1, x: 0 }}
+              className='absolute right-[-100px] top-0 w-[370px] aspect-square max-md:hidden'>
+              <DotLottieReact
+                src="https://lottie.host/00a2d387-0819-480f-a42a-75bdbfc18c94/sADWaht3qJ.lottie"
+                loop
+                autoplay
+              />
+            </motion.div>
           </motion.div>
-
         </div>
         <Sidebar />
       </div>
 
-    </div>
+      <motion.div
+        animate={{ y: [-5, 5], transition: { duration: 1, repeat: Infinity, repeatType: "mirror", delay: 1 } }}
+        className='absolute bottom-3 left-[49vw] opacity-60 max-sm:hidden'>
+        <Image src={Scroll} alt="" width={50} />
+      </motion.div>
+
+    </div >
   )
 }
 
