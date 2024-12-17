@@ -77,7 +77,11 @@ const page = () => {
         </div>
         <Sidebar />
       </div>
-
+ <motion.div
+        animate={{ y: [-5, 5], transition: { duration: 1, repeat: Infinity, repeatType: "mirror", delay: 1 } }}
+        className='absolute bottom-3 left-[49vw] opacity-60 max-sm:hidden'>
+        <Image src={Scroll} alt="" width={50} />
+      </motion.div>
     </div>
   )
 }
