@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
-const page = () => {
+const Page = () => {
 
     const theme = createTheme({
         palette: {
@@ -117,4 +117,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
