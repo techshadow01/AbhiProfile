@@ -13,7 +13,7 @@ import Node from './assets/n.svg'
 
 import { motion } from "motion/react"
 
-const page = () => {
+const about1 = () => {
 
     const MTooltip = styled(({ className, ...props }) => (
         <Tooltip {...props} classes={{ popper: className }} />
@@ -146,4 +146,4 @@ const page = () => {
     )
 }
 
-export default page
+export default about1
