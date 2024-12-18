@@ -1,9 +1,9 @@
 import localFont from "next/font/local";
  import Navbar from './components/navbar'
-import About from './about/page'
- import Skills from './skills/page'
- import Projects from './projects/page'
- import Contact from './contact/page'
+import About from './about'
+ import Skills from './skills'
+ import Projects from './projects'
+ import Contact from './contact'
 
 import "./globals.css";
 
