@@ -1,5 +1,3 @@
 {
-  "rules": {
-    "padded-blocks": "off"
-  }
+  "extends": "next/core-web-vitals"
 }
