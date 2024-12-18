@@ -91,7 +91,7 @@ const Single = ({ item }) => {
 }
 
 
-const page = () => {
+const projects1 = () => {
 
     const ref = useRef(null)
     const { scrollYProgress } = useScroll({
@@ -121,4 +121,4 @@ const page = () => {
     )
 }
 
-export default page
+export default projects1
