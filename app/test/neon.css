@@ -1,0 +1,67 @@
+@font-face{
+    font-family: "Liberty";
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf');
+}
+
+.text
+    {
+        font-family: 'Liberty';
+        font-weight: 100;
+        font-size: 7rem;
+    }
+
+        .letter{
+            color: #DB2777;
+            text-shadow: 0 0 4rem #DB2777;
+            display: inline-block;
+        }
+
+        .letter-2{
+            transform: translate(-0.2rem, 1rem) rotate(10deg);
+            animation: flicker 2s ease-in-out infinite alternate;
+        }
+         
+
+@keyframes flicker
+{
+    0%{
+        opacity: 1;
+        transform: translate(-0.2rem, 1rem) rotate(10deg);
+    }
+ 
+    5%{
+        opacity: 1;
+        transform: translate(-0.2rem, 1rem) rotate(10deg);
+    }
+      
+    5.5%{
+        opacity: 0;
+        transform: translate(-0.2rem, 1rem) rotate(10deg);
+    }
+       
+6%{
+
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+}
+6.5%{
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+}
+7%{
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+}
+8%{
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+}
+50%{
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(13deg);
+}
+100%{
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+}
+}
