@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
-const contact1 = () => {
+const page = () => {
 
     const theme = createTheme({
         palette: {
@@ -117,4 +117,4 @@ const contact1 = () => {
     )
 }
 
-export default contact1
+export default page
