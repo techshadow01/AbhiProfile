@@ -1,9 +1,10 @@
 import localFont from "next/font/local";
- import Navbar from './components/navbar'
+import Navbar from './components/navbar'
 import About from './about/page'
 import Skills from './skills/page'
 import Projects from './projects/page'
 import Contact from './contact/page'
+import Skills1 from './test/skills'
 
 import "./globals.css";
 
@@ -33,9 +34,10 @@ export default function RootLayout({ children }) {
         <div id="Divide1" className="divider"></div>
         {children}
         <div id="Divide2" className="divider"></div>
-          <About />
+        <About />
         <div id="Divide3" className="divider"></div>
-        <Skills />
+        <Skills1 />
+        {/* <Skills /> */}
         <div id="Divide4" className="divider"></div>
         <Projects />
         <div id="Divide5" className="divider"></div>
