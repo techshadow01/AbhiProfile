@@ -40,11 +40,11 @@ export default function MTabs() {
         setValue(newValue)
     }
 
-     setInterval((e) => { elementInViewport("Divide1", 0) }, 500);
-     setInterval((e) => { elementInViewport("Divide2", 1) }, 500);
-     setInterval((e) => { elementInViewport("Divide3", 2) }, 500);
-     setInterval((e) => { elementInViewport("Divide4", 3) }, 500);
-     setInterval((e) => { elementInViewport("Divide5", 4) }, 500);
+     setInterval((e) => { elementInViewport("Divide1", 0) }, 1000);
+     setInterval((e) => { elementInViewport("Divide2", 1) }, 1000);
+     setInterval((e) => { elementInViewport("Divide3", 2) }, 1000);
+     setInterval((e) => { elementInViewport("Divide4", 3) }, 1000);
+     setInterval((e) => { elementInViewport("Divide5", 4) }, 1000);
 
     const elementInViewport = (gotit, place) => {
         var myElement = document.getElementById(gotit);
