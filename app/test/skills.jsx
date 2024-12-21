@@ -1,9 +1,9 @@
 'use client'
 
-import { React, useState } from 'react'
+import { React } from 'react'
 import './neon.css'
 import Image from 'next/image'
-import { motion, spring } from "motion/react"
+import { motion, useSpring } from "motion/react"
 
 const tools = [
     {
@@ -178,6 +178,8 @@ import postman from './assets/other/postman.svg'
 import prompt from './assets/other/prompt.svg'
 import vscode from './assets/other/vscode.svg'
 import figma from './assets/other/figma.svg'
+import { Opacity, Scale } from '@mui/icons-material'
+import { easeIn, easeInOut } from 'motion'
 
 const Other = [
     {
@@ -218,57 +220,68 @@ const Other = [
 ]
 
 
+const variants1 = {
+    hide: {
+        y: 50,
+        opacity: 0
+    },
+    show: (index) => (
+        {
+            y: 0,
+            transition: {
+                duration: 1,
+                delay: 0.1 * index,
+            },
+            type: useSpring,
+            opacity: 1
+        }
+    ),
+}
 
+const renderToolCategory = (categoryData) => {
+    return categoryData.map((item1, index1) => (
+        <motion.div
+            key={index1}
+            className={`w-[100px] h-[100px] wtrans sm:bg-white sm:bg-opacity-10 text-white rounded-2xl duration-200 flex flex-col text-xl items-center justify-center sm-border border-zinc-800 ${item1.color}`}>
+            <motion.div>
+                <Image className='size-16' src={item1.img} alt="" />
+            </motion.div>
+            <div className='sm:hidden'>{item1.name}</div>
+        </motion.div>
+    ));
+};
 
 const skills = () => {
+
     return (
         <motion.div id="skillsmove" className='flex max-sm:flex-col my-36 max-sm:my-0 max-sm:mb-20'>
             <div className='w-[30vw] max-sm:w-auto'>
                 <motion.div
-                    className='sticky max-sm:static top-[40vh]  text-6xl w-[300px] flex items-center justify-center uppercase font-bold text-pink-600 p-3 m-auto text'>
-                    <span class="letter letter-1">S</span>
-                    <span class="letter letter-2">K</span>
-                    <span class="letter letter-3">I</span>
-                    <span class="letter letter-4">L</span>
-                    <span class="letter letter-4">L</span>
+                    className='sticky max-sm:static top-[40vh] flex items-center justify-center uppercase font-bold text-pink-600 p-3 m-auto text'>
+                    <span class="letter letter-1 max-sm:text-8xl">S</span>
+                    <span class="letter letter-2 max-sm:text-8xl">K</span>
+                    <span class="letter letter-3 max-sm:text-8xl">I</span>
+                    <span class="letter letter-4 max-sm:text-8xl">L</span>
+                    <span class="letter letter-4 max-sm:text-8xl">L</span>
                     {/* skill */}
                 </motion.div>
             </div>
             <div className=' m-4 '>
                 {tools.map((item, index) => {
                     return <motion.div key={index}
-                        // initial={{ opacity: 0 }}
-                        // whileInView={{ opacity: 1, transition: { duration: 1 } }}
-                        className=' text-3xl  text-white flex flex-col gap-3 m-3'>
-                        <div className='w-[200px] uppercase font-semibold flex items-center '>{item.name}</div>
-                        <div className=' flex gap-3 flex-wrap'>
-
-
-                            {index == 0 && Frame.map((item1, index1) => {
-                                return <motion.div key={index1}
-                                    className={`w-[100px] h-[100px] wtrans text-white rounded-2xl duration-200 flex items-center justify-center border  border-zinc-800 ${item1.color} `} > <Image className='size-16' src={item1.img} alt="" /></motion.div>
-                            })}
-
-                            {index == 1 && Languages.map((item1, index1) => {
-                                return <motion.div key={index1}
-                                    className={`w-[100px] h-[100px] wtrans text-white rounded-2xl duration-200 flex items-center justify-center border border-zinc-800 ${item1.color} `} > <Image className='size-16' src={item1.img} alt="" /></motion.div>
-                            })}
-
-                            {index == 2 && Library.map((item1, index1) => {
-                                return <motion.div key={index1}
-                                    className={`w-[100px] h-[100px] wtrans text-white rounded-2xl duration-200 flex items-center justify-center border border-zinc-800 ${item1.color}`} > <Image className='size-16' src={item1.img} alt="" /></motion.div>
-                            })}
-
-                            {index == 3 && Database.map((item1, index1) => {
-                                return <motion.div key={index1}
-                                    className={`w-[100px] h-[100px] wtrans text-white rounded-2xl duration-200 flex items-center justify-center border border-zinc-800 ${item1.color} `} > <Image className='size-16' src={item1.img} alt="" /></motion.div>
-                            })}
-
-
-                            {index == 4 && Other.map((item1, index1) => {
-                                return <motion.div key={index1}
-                                    className={`w-[100px] h-[100px] wtrans text-white rounded-2xl duration-200 flex items-center justify-center border border-zinc-800 ${item1.color} `} > <Image className={`size-16`} src={item1.img} alt="" /></motion.div>
-                            })}
+                        variants={variants1}
+                        initial="hide"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.3 }}
+                        custom={index}
+                        className=' text-3xl  text-white flex flex-col gap-3 m-3  max-sm:mt-10 max-sm:text-center'>
+                        <div className='w-[200px] uppercase font-semibold flex items-center max-sm:mx-auto max-sm:justify-center '>{item.name}</div>
+                        <div className=' flex gap-3 flex-wrap max-sm:justify-center'>
+                            {index == 0 && renderToolCategory(Frame)}
+                            {index == 1 && renderToolCategory(Languages)}
+                            {index == 2 && renderToolCategory(Library)}
+                            {index == 3 && renderToolCategory(Database)}
+                            {index == 4 && renderToolCategory(Other)}
                         </div>
                     </motion.div>
                 })}
