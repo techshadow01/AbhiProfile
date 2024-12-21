@@ -93,7 +93,7 @@ const page = () => {
                             transition: Zoom,
                         }} >
                             <motion.div
-                                initial={{ opacity: 0, x: -60 }}
+                                initial={{ opacity: 0, x: -30 }}
                                 whileInView={{ opacity: 1, x: 0, transition: { delay: 0.8 } }}
                                 viewport={{ once: true, amount: 1 }}
                                 className='text-[#47A248]'><Image src={Mongo} alt="" />M</motion.div>
