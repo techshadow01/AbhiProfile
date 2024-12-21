@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar'
 import About from './about/page'
 import Projects from './projects/Page'
 import Contact from './contact/Page'
