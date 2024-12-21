@@ -31,7 +31,7 @@ const Navbar = () => {
 
 
     return (
-        <div className={`fixed  z-20 w-[100vw] h-[50px] trans flex items-center justify-center border-pink-600 max-sm:border max-sm:rounded-full max-sm:w-[50vw] max-sm:ml-[25vw]  max-sm:bg-black duration-700 ${visible ? 'max-sm:top-5' : 'max-sm:-top-14'} `}>
+       <div className={`fixed  z-20 w-[100vw] h-[50px] trans flex items-center justify-center border-pink-600 max-sm:border max-sm:rounded-full max-sm:w-[70vw] max-sm:ml-[15vw] max-sm:h-[60px]  max-sm:bg-black duration-700 ${visible ? 'max-sm:top-5' : 'max-sm:-top-14'} `}>
             <div className={`w-[90vw] text-white flex items-center justify-between max-sm:hidden  `}>
                 <a href="./"><div className='flex items-center justify-center gap-2 text-2xl max-sm:hidden'>
                     <div className='text-pink-600 font-bold '>Abhishek</div>
