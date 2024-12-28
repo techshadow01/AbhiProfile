@@ -2,18 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Liberty";
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf');
+}
+
 * {
   margin: 0px;
   padding: 0px;
 }
 
+.paper{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 body {
   overflow-x: hidden;
- background-color: black;
 }
 
 .glow:hover {
-  box-shadow: 0 0 30px 10px rgba(218, 40, 167, 0.4);
+  box-shadow: 0 0 30px 10px rgba(51, 48, 54, 0.4);
 }
 
 .pglow {
@@ -31,10 +39,21 @@ body {
   -webkit-backdrop-filter: blur(0px);
 }
 
+.neontext {
+  font-family: 'Liberty';
+}
+
 .trans {
   /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(225, 225, 225, 0)); */
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+.projecttrans{
+  background: rgba( 255, 255, 255, 0.05 );
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .divider {
