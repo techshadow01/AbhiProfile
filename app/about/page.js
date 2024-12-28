@@ -64,14 +64,14 @@ const page = () => {
     }));
 
     return (
-        <div id="aboutmove" className='relative w-[100vw] h-[100vh] flex items-center justify-center flex-col gap-4'>
-            <div className='w-[100vw] h-[100px]  flex items-center justify-center max-sm:flex-col'>
+        <div id="aboutmove" className='relative w-[100vw] h-[100vh] flex items-center justify-center flex-col gap-4 rounded-xl '>
+            <div className='w-[100vw] h-[100px]  flex items-center justify-center max-sm:flex-col '>
                 <motion.div
                     id="aboutbox"
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
                     viewport={{ once: true, amount: 0.5 }}
-                    className='min-w-[16%] border-[6px] border-pink-600 text-white text-center text-4xl font-bold p-4 flex items-center justify-center gap-3'>
+                    className='min-w-[16%] border-[6px] border-pink-600 text-white text-center text-4xl font-bold p-4 flex items-center justify-center gap-3  max-sm:text-6xl max-sm:border-none'>
                     <div>About</div>
                     <div className='text-pink-600'>Me</div>
 
@@ -80,7 +80,7 @@ const page = () => {
             <div className='w-[95vw] h-[calc(100%-100px)] flex max-sm:flex-col-reverse after: max-sm:h-auto'>
                 <div className=' relative w-[50%] h-[100%] flex items-center justify-center flex-col gap-4 max-sm:w-full'>
                     <div className='flex flex-col text-white w-[60%] gap-4 text-center text-xl max-sm:text-base max-sm:w-[90%]'>
-                        <div> Hello! I'm Abhishek , a passionate and detail-oriented web developer with a strong focus on creating dynamic, user-friendly websites and web applications. With [X] years of experience in front-end and back-end development, I specialize in transforming ideas into functional, visually appealing online experiences.</div>
+                        <div> Hello! I'm Abhishek , a passionate and detail-oriented web developer with a strong focus on creating dynamic, user-friendly websites and web applications. With experience in front-end and back-end development, I specialize in transforming ideas into functional, visually appealing online experiences.</div>
 
                         <div> I have a deep understanding of HTML, CSS, JavaScript, and various frameworks like React, Vue, and Node.js, as well as experience with back-end technologies such as PHP, Python, and Ruby on Rails. I’m constantly exploring new tools and techniques to stay ahead in an ever-evolving industry.</div>
                     </div>
