@@ -57,7 +57,7 @@ const Modal1 = (props) => {
 
                         {<div className='flex gap-2 rounded-full '>
                             {(props.item.tech).map((item1, index1) => {
-                                return <div key={index1} className='rounded-full text-xl px-2 border border-slate-600'>{item1}</div>
+                                return <div key={index1} className='rounded-full text-xl'>{item1}</div>
                             })}
                         </div>}
                     </motion.div>
