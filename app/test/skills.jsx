@@ -244,9 +244,9 @@ const renderToolCategory = (categoryData) => {
             key={index1}
             className={`size-[100px] max-sm:size-[80px] wtrans sm:bg-white sm:bg-opacity-10 text-white rounded-2xl duration-200 flex flex-col text-xl items-center justify-center sm-border border-zinc-800 ${item1.color}`}>
             <motion.div>
-                <Image className='size-16 max-sm:size-14' src={item1.img} alt="" />
+                <Image className='size-16 max-sm:size-10' src={item1.img} alt="" />
             </motion.div>
-            <div className='sm:hidden max-sm:text-lg'>{item1.name}</div>
+            <div className='sm:hidden max-sm:text-sm'>{item1.name}</div>
         </motion.div>
     ));
 };
@@ -276,7 +276,7 @@ const skills = () => {
                         custom={index}
                         className=' text-3xl  text-white flex flex-col gap-3 m-3  max-sm:mt-10 max-sm:text-center'>
                         <div className='w-[200px]  uppercase font-semibold flex items-center max-sm:mx-auto max-sm:justify-center  max-sm:text-4xl'>{item.name}</div>
-                        <div className={` flex gap-3 max-sm:gap-0 flex-wrap max-sm:justify-center `}>
+                        <div className={` flex gap-3 max-sm:gap-1 flex-wrap max-sm:justify-center `}>
                             {index == 0 && renderToolCategory(Frame)}
                             {index == 1 && renderToolCategory(Languages)}
                             {index == 2 && renderToolCategory(Library)}
