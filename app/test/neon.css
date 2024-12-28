@@ -11,8 +11,11 @@
     }
 
         .letter{
-            color: #DB2777;
-            text-shadow: 0 0 4rem #DB2777;
+            /* color: #98a1ab; */
+            background: linear-gradient(to bottom, white, #38495a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 4rem #49586D;
             display: inline-block;
         }
 
