@@ -31,7 +31,7 @@ const Page = () => {
         <div id="contactmove" className=' w-[100vw] h-[100vh] flex items-center justify-center max-sm:h-auto'>
             <div className='flex w-[40%] h-[60%] max-sm:hidden'>
                 <DotLottieReact
-                    src="https://lottie.host/a900a14f-41fd-41ba-b86c-4eb8335ce58e/30rFYUV1wG.lottie"
+                         src="https://lottie.host/6e988027-87d1-4c9b-8767-962277cb136b/ykgcsnr68N.lottie"
                     loop
                     autoplay
                 />
