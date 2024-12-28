@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
@@ -7,6 +9,18 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#4F5E6D',
+        },
+        secondary: {
+            main: '#DB2777',
+        },
+    },
+});
 
 const actions = [
     { icon: <a href='https://github.com/techshadow01' target="_blank"> <GitHubIcon className='text-black' /></a>, name: 'Github' },
@@ -18,20 +32,22 @@ const actions = [
 function BasicSpeedDial() {
     return (
         <Box className="h-[320px] flex-grow fixed z-20 bottom-2 right-8 sm:hidden">
-            <SpeedDial
-                ariaLabel="SpeedDial basic example"
+            <ThemeProvider theme={theme}>
+                <SpeedDial
+                    ariaLabel="SpeedDial basic example"
 
-                icon={<SpeedDialIcon className='bg-slate-600 h-14 w-14 rounded-full flex items-center justify-center' />}
-            >
-                {actions.map((action) => (
-                    <SpeedDialAction
+                    icon={<SpeedDialIcon />}
+                >
+                    {actions.map((action) => (
+                        <SpeedDialAction
 
-                        key={action.name}
-                        icon={action.icon}
-                        tooltipTitle={action.name}
-                    />
-                ))}
-            </SpeedDial>
+                            key={action.name}
+                            icon={action.icon}
+                            tooltipTitle={action.name}
+                        />
+                    ))}
+                </SpeedDial>
+            </ThemeProvider>
         </Box>
     );
 }
