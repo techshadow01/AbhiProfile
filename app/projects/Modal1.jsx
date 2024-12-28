@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Cross from './assets/cross.svg'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
@@ -12,7 +13,7 @@ import Github from './assets/github.svg'
 import { motion } from "motion/react"
 
 const Modal1 = (props) => {
-    const [open, setOpen] = React.useState(false);
+   const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -23,12 +24,14 @@ const Modal1 = (props) => {
                 open={open}
                 onClose={handleClose}
             >
-                <Box className='absolute z-20 bg-white w-screen h-screen'>
+                <Box className='absolute z-20 w-[90%] top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl overflow-hidden'>
                     <button className='absolute text-2xl text-white
-                     z-40 right-5 top-5 font-bold' onClick={handleClose}>x</button>
+                     z-40 right-5 top-5 font-bold' onClick={handleClose}>
+                        <Image src={Cross} alt="" width={10} />
+                    </button>
 
                     <div className='w-screen '>
-                        <Image src={props.item.img} alt="" />
+                        <Image className='w-[90%] h-[25%] object-contain' src={props.item.img} alt="" />
                     </div>
 
                     <motion.div
@@ -37,7 +40,7 @@ const Modal1 = (props) => {
                         <div className=' text-black text-xl '>{props.item.desc}</div>
                         <div className='flex gap-4 '>
                             <motion.div >
-                                <a href="" target='_blank'>
+                                <a href={props.item.live} target='_blank'>
                                     <button className=' border bg-slate-500  rounded-full min-w-[100px] h-10 normal-case text-white'>
                                         Live
                                     </button>
@@ -54,7 +57,7 @@ const Modal1 = (props) => {
 
                         {<div className='flex gap-2 rounded-full '>
                             {(props.item.tech).map((item1, index1) => {
-                                return <div key={index1} className='rounded-full text-xl border border-slate-600 px-2'>{item1}</div>
+                                return <div key={index1} className='rounded-full text-xl px-2 border border-slate-600'>{item1}</div>
                             })}
                         </div>}
                     </motion.div>
@@ -63,5 +66,6 @@ const Modal1 = (props) => {
         </div >
     );
 }
+
 
 export default Modal1
