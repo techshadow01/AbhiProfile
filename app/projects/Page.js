@@ -1,18 +1,14 @@
 'use client'
 
-import { React, useEffect, useRef, useState } from 'react'
+import { React, useRef } from 'react'
 import Image from 'next/image'
-import Mac from './assets/macbook.png'
 import Chat from './assets/chatbot.png'
 import Alice from './assets/Alice.png'
 import Spotify from './assets/spotify.png'
+import Github from './assets/github.svg'
 import { motion, useScroll, useSpring, useTransform } from "motion/react"
 
-import play from './assets/playbtn.svg'
-import pause from './assets/pause2.svg'
-import Alicevideo from './assets/alicevideo.gif'
-import spotifyvideo from './assets/spotifyvideo.gif'
-import chatvideo from './assets/chatvideo.gif'
+import BasicModal from './Modal1'
 
 const Project = [{
     id: 1,
@@ -20,7 +16,7 @@ const Project = [{
     img: Alice,
     desc: "Transform your projects with our AI image generator. Generate high-quality, AI generated images with unparalleled speed and style ",
     live: "https://alice-ai-ten.vercel.app/",
-    video: Alicevideo,
+    code: "https://github.com/techshadow01/AliceAI",
     tech: [
         "#React",
         "#Vite",
@@ -32,9 +28,9 @@ const Project = [{
     id: 2,
     title: "Spotify Clone",
     img: Spotify,
-    desc: "a Music player that offers seamless playback, high-quality sound, and an intuitive interface. It allows easy navigation through playlists, and provides customizable settings.",
+    desc: "a Music player that offers seamless playback, high-quality sound, and an intuitive interface. It allows easy navigation through playlists.",
     live: "https://abhiproject.freewebhostmost.com/",
-    video: spotifyvideo,
+    code: "https://github.com/techshadow01/spotify",
     tech: [
         "#html",
         "#css",
@@ -46,7 +42,7 @@ const Project = [{
     img: Chat,
     desc: "A good AI chatbot which understands user inputs, provides relevant responses, and adapts to different contexts. ",
     live: "https://chat-bot-delta-six.vercel.app/",
-    video: chatvideo,
+    code: "https://github.com/techshadow01/chat_bot",
     tech: [
         "#React",
         "#Vite",
@@ -59,8 +55,6 @@ const Single = ({ item }) => {
 
     const ref = useRef();
 
-    const [playback, setplayback] = useState(false)
-
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start start", "end end"]
@@ -68,25 +62,44 @@ const Single = ({ item }) => {
 
     const y = useTransform(scrollYProgress, [0, 1], [-250, 250])
 
-    return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] max-sm:h-auto max-sm:py-5 flex items-center justify-center gap-6 text-white max-sm:flex-col max-sm:mt-14'>
-        <div className='relative'>
-            <Image className='absolute -z-2 top-1.5 left-[12%] rounded-[10px] h-[88%] w-[76%] ' src={playback ? item.video : item.img} alt="" />
-            <Image className='rounded-[10px]' src={Mac} alt="" width={540} />
-        </div>
-        <motion.div className='flex items-start justify-center flex-col gap-4 max-sm:w-[80vw] max-sm:items-center'>
-            <div className='text-4xl font-bold text-pink-600'>{item.title}</div>
-            <div className='max-w-[550px] text-xl max-sm:text-center'>{item.desc}</div>
-            <div className='flex gap-4 '>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} ><a href={item.live} target='_blank'><button className=' bg-pink-600 text-white rounded-[4px] min-w-[100px] h-10 normal-case glow'>Live</button></a></motion.div>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}><button className=' bg-pink-600 text-white rounded-full w-10 h-10 normal-case glow flex items-center justify-center' onClick={() => setplayback(!playback)}><Image src={playback ? pause : play} alt="" width={15} /></button></motion.div>
-            </div>
+    return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] max-sm:h-auto max-sm:py-5 flex items-center justify-center gap-6 text-white max-sm:flex-col max-sm:mt-14' >
+        <div className='relative flex items-center justify-center '>
+            <motion.div
+                initial={{ x: 40 }}
+                whileInView={{ x: 80, transition: { duration: 0.5 } }}
+                viewport={{ once: true, amount: 1 }}
+                className='max-sm:hidden'
+            >
+                <Image className='rounded-[10px] ' src={item.img} alt="" width={700} />
+            </motion.div>
 
-            <div className='flex gap-4 max-sm:border max-sm:border-pink-600 rounded-full max-sm:px-4'>
-                {(item.tech).map((item1, index1) => {
-                    return <div key={index1} className='p-2 px-4 border border-pink-600 rounded-full max-sm:border-none max-sm:px-0'>{item1}</div>
-                })}
-            </div>
-        </motion.div>
+            <motion.div
+                className='sm:hidden w-[90%] shadow-lg '
+            >
+                <Image className='rounded-[10px] cursor-pointer' src={item.img} alt="" width={700} />
+                <BasicModal item={item} />
+            </motion.div>
+
+            <motion.div
+                initial={{ y: 100, x: -40 }}
+                whileInView={{ x: -80, transition: { duration: 0.5 } }}
+                viewport={{ once: true, amount: 0.8 }}
+                className='max-sm:hidden  flex items-center justify-center h-[100%] w-[400px] flex-col gap-4 p-2 max-sm:w-[80vw] max-sm:items-center projecttrans rounded-xl '>
+                <div className='text-4xl font-bold text-white'>{item.title}</div>
+                <div className='w-[300px] text-xl text-center'>{item.desc}</div>
+                <div className='flex gap-4 '>
+                    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} ><a href={item.live} target='_blank'><button className=' border border-slate-500 text-white projecttrans rounded-full min-w-[100px] h-10 normal-case'>Live</button></a></motion.div>
+                    <a href={item.code} target='_blank'><motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}><button className=' bg-slate-500 text-white rounded-full w-10 h-10 normal-case flex items-center justify-center' ><Image src={Github} alt="" width={65} /></button></motion.div></a>
+                </div>
+
+                <div className='flex gap-2 max-sm:border max-sm:border-slate-500 rounded-full max-sm:px-4'>
+                    {(item.tech).map((item1, index1) => {
+                        return <div key={index1} className=' px-4  border border-slate-500  rounded-full max-sm:border-none max-sm:px-0'>{item1}</div>
+                    })}
+                </div>
+            </motion.div>
+        </div >
+
     </motion.div >
 }
 
@@ -104,7 +117,7 @@ const Page = () => {
     })
     return (
         <motion.div id="projectsmove" ref={ref}>
-            <div className='sticky top-[50px] flex items-center justify-center flex-col gap-3 max-sm:relative'
+            <div className='sticky top-[50px] flex items-center justify-center flex-col gap-3 max-sm:top-[0px] max-sm:trans'
                 style={{ zIndex: 10 }}>
                 <div className=' text-white text-center text-5xl flex gap-3'>
                     <div className='text-pink-600 font-bold '>Latest</div>
