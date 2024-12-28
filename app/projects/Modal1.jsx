@@ -11,7 +11,7 @@ import Spotify from './assets/spotify.png'
 import Github from './assets/github.svg'
 import { motion } from "motion/react"
 
-const modal = (props) => {
+const Modal1 = (props) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -64,4 +64,4 @@ const modal = (props) => {
     );
 }
 
-export default modal
+export default Modal1
