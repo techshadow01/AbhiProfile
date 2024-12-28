@@ -21,7 +21,7 @@ function BasicSpeedDial() {
             <SpeedDial
                 ariaLabel="SpeedDial basic example"
 
-                icon={<SpeedDialIcon className='bg-slate-600 size-14 rounded-full flex items-center justify-center' />}
+                icon={<SpeedDialIcon className='bg-slate-600 h-14 w-14 rounded-full flex items-center justify-center' />}
             >
                 {actions.map((action) => (
                     <SpeedDialAction
