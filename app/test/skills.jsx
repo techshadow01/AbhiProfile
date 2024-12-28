@@ -276,7 +276,7 @@ const skills = () => {
                         custom={index}
                         className=' text-3xl  text-white flex flex-col gap-3 m-3  max-sm:mt-10 max-sm:text-center'>
                         <div className='w-[200px]  uppercase font-semibold flex items-center max-sm:mx-auto max-sm:justify-center  max-sm:text-4xl'>{item.name}</div>
-                        <div className={` flex gap-3 max-sm:gap-1 flex-wrap max-sm:justify-center `}>
+                        <div className={` flex gap-3 max-sm:gap-0 flex-wrap max-sm:justify-center `}>
                             {index == 0 && renderToolCategory(Frame)}
                             {index == 1 && renderToolCategory(Languages)}
                             {index == 2 && renderToolCategory(Library)}
