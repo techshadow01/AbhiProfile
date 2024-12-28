@@ -229,7 +229,7 @@ const variants1 = {
         {
             y: 0,
             transition: {
-                duration: 1,
+                duration: 0.5,
                 delay: 0.1 * index,
             },
             type: useSpring,
@@ -242,11 +242,11 @@ const renderToolCategory = (categoryData) => {
     return categoryData.map((item1, index1) => (
         <motion.div
             key={index1}
-            className={`w-[100px] h-[100px] wtrans sm:bg-white sm:bg-opacity-10 text-white rounded-2xl duration-200 flex flex-col text-xl items-center justify-center sm-border border-zinc-800 ${item1.color}`}>
+            className={`size-[100px] max-sm:size-[80px] wtrans sm:bg-white sm:bg-opacity-10 text-white rounded-2xl duration-200 flex flex-col text-xl items-center justify-center sm-border border-zinc-800 ${item1.color}`}>
             <motion.div>
-                <Image className='size-16' src={item1.img} alt="" />
+                <Image className='size-16 max-sm:size-10' src={item1.img} alt="" />
             </motion.div>
-            <div className='sm:hidden'>{item1.name}</div>
+            <div className='sm:hidden max-sm:text-sm'>{item1.name}</div>
         </motion.div>
     ));
 };
@@ -257,8 +257,8 @@ const skills = () => {
         <motion.div id="skillsmove" className='flex max-sm:flex-col my-36 max-sm:my-0 max-sm:mb-20'>
             <div className='w-[30vw] max-sm:w-auto'>
                 <motion.div
-                    className='sticky max-sm:static top-[40vh] flex items-center justify-center uppercase font-bold text-pink-600 p-3 m-auto text'>
-                    <span class="letter letter-1 max-sm:text-8xl">S</span>
+                    className='sticky max-sm:static top-[40vh] flex items-center justify-center uppercase font-bold text-white p-3 m-auto text'>
+                    <span class="letter letter-1 max-sm:text-8xl" >S</span>
                     <span class="letter letter-2 max-sm:text-8xl">K</span>
                     <span class="letter letter-3 max-sm:text-8xl">I</span>
                     <span class="letter letter-4 max-sm:text-8xl">L</span>
@@ -272,11 +272,11 @@ const skills = () => {
                         variants={variants1}
                         initial="hide"
                         whileInView="show"
-                        viewport={{ once: true, amount: 0.3 }}
+                        viewport={{ once: true }}
                         custom={index}
                         className=' text-3xl  text-white flex flex-col gap-3 m-3  max-sm:mt-10 max-sm:text-center'>
-                        <div className='w-[200px] uppercase font-semibold flex items-center max-sm:mx-auto max-sm:justify-center max-sm:text-pink-600'>{item.name}</div>
-                        <div className=' flex gap-3 flex-wrap max-sm:justify-center'>
+                        <div className='w-[200px]  uppercase font-semibold flex items-center max-sm:mx-auto max-sm:justify-center  max-sm:text-4xl'>{item.name}</div>
+                        <div className={` flex gap-3 max-sm:gap-0 flex-wrap max-sm:justify-center `}>
                             {index == 0 && renderToolCategory(Frame)}
                             {index == 1 && renderToolCategory(Languages)}
                             {index == 2 && renderToolCategory(Library)}
