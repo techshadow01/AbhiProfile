@@ -6,7 +6,7 @@ import Tabs from './MTabs'
 import Mnavbar from './mnavbar'
 
 
-const navbar = () => {
+const Navbar = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true)
 
@@ -48,4 +48,4 @@ const navbar = () => {
     )
 }
 
-export default navbar
+export default Navbar
