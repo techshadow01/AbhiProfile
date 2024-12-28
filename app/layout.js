@@ -4,6 +4,7 @@ import About from './about/page'
 import Projects from './projects/Page'
 import Contact from './contact/Page'
 import Skills1 from './test/skills'
+import Speeddial from './components/speeddial'
 
 import "./globals.css";
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
+         <Speeddial />
         <div id="Divide1" className="divider"></div>
         {children}
         <div id="Divide2" className="divider"></div>
