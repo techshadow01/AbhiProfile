@@ -244,9 +244,9 @@ const renderToolCategory = (categoryData) => {
             key={index1}
             className={`size-[100px] max-sm:size-[80px] wtrans sm:bg-white sm:bg-opacity-10 text-white rounded-2xl duration-200 flex flex-col text-xl items-center justify-center sm-border border-zinc-800 ${item1.color}`}>
             <motion.div>
-                <Image className='size-16 max-sm:size-10' src={item1.img} alt="" />
+                <Image className='size-16 max-sm:size-14' src={item1.img} alt="" />
             </motion.div>
-            <div className='sm:hidden max-sm:text-sm'>{item1.name}</div>
+            <div className='sm:hidden max-sm:text-lg'>{item1.name}</div>
         </motion.div>
     ));
 };
