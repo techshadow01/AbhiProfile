@@ -31,12 +31,12 @@ const Modal1 = (props) => {
                     </button>
 
                     <div className='w-screen '>
-                        <Image className='w-[90%] h-[25%] object-contain' src={props.item.img} alt="" />
+                        <Image className='w-[90%] h-[25%] object-contain' src={props.item.img} alt="" width={400} />
                     </div>
 
                     <motion.div
                         className='flex flex-col gap-4 p-2 '>
-                     <div className={`text-4xl font-bold ${props.item.text}`}>{props.item.title}</div>
+                        <div className={`text-4xl font-bold ${props.item.text}`}>{props.item.title}</div>
                         <div className=' text-black text-xl '>{props.item.desc}</div>
                         <div className='flex gap-4 '>
                             <motion.div >
@@ -57,7 +57,9 @@ const Modal1 = (props) => {
 
                         {<div className='flex gap-2 rounded-full '>
                             {(props.item.tech).map((item1, index1) => {
-                                return <div key={index1} className='rounded-full text-xl'>{item1}</div>
+                                return <div key={index1} className='rounded-full text-xl px-2'>
+                                    <Image src={item1} alt="" width={30} />
+                                </div>
                             })}
                         </div>}
                     </motion.div>
