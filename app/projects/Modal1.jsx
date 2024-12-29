@@ -36,7 +36,7 @@ const Modal1 = (props) => {
 
                     <motion.div
                         className='flex flex-col gap-4 p-2 '>
-                        <div className='text-4xl font-bold text-pink-600'>{props.item.title}</div>
+                     <div className={`text-4xl font-bold ${props.item.text}`}>{props.item.title}</div>
                         <div className=' text-black text-xl '>{props.item.desc}</div>
                         <div className='flex gap-4 '>
                             <motion.div >
@@ -53,7 +53,7 @@ const Modal1 = (props) => {
                             </motion.div></a>
                         </div>
 
-                        <div className='text-2xl font-bold text-pink-600'>Tech Used :</div>
+                        <div className={`text-2xl font-bold ${props.item.text}`}>Tech Used :</div>
 
                         {<div className='flex gap-2 rounded-full '>
                             {(props.item.tech).map((item1, index1) => {
