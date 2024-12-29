@@ -22,7 +22,7 @@ import Tailwind from '../test/assets/library/tailwind.svg'
 import MongoDB from '../test/assets/database/mongodb.svg'
 import { motion, useScroll, useSpring, useTransform } from "motion/react"
 
-import BasicModal from './modal'
+import BasicModal from './Modal1'
 
 const Project = [{
     title: "Alice AI",
