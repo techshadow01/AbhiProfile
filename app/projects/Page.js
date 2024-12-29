@@ -168,10 +168,8 @@ const Page = () => {
                     <div className='text-pink-600 font-bold '>Latest</div>
                     <div className='text-white font-semibold'>Works</div>
                 </div>
-                <motion.div className='max-sm:hidden bg-white h-2 w-[95vw] rounded-full' style={{ scaleX }} />
+                <motion.div className=' bg-white h-2 w-[95vw] rounded-full' style={{ scaleX }} />
             </div >
-
-            <motion.div className='max-sm:sticky mx-auto sm:hidden top-0 bg-white h-2 w-[95vw] rounded-full' style={{ scaleX, zIndex: 10 }} />
 
             <motion.div className='flex items-center justify-center flex-col'>
                 {Project.map((item) => {
