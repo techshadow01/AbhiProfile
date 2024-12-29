@@ -22,19 +22,19 @@ const mnavbar = () => {
    return (
         < div className={`w-[95%] flex items-center justify-center mx-auto cursor-pointer overflow-hidden `} >
             < div className='w-[20%] flex items-center justify-center' onClick={() => Move("homemove")} >
-                <HomeIcon className='text-white hover:text-pink-600 size-8' />
+                <HomeIcon className='text-white size-8' />
             </div >
             <div className='w-[20%] flex items-center justify-center' onClick={() => Move("aboutmove")} >
-                <FileCopyIcon className='text-white hover:text-pink-600 size-8' />
+                <FileCopyIcon className='text-white size-8' />
             </div>
             <div className='w-[20%] flex items-center justify-center' onClick={() => Move("skillsmove")} >
-                <InterestsIcon className='text-white hover:text-pink-600 size-8' />
+                <InterestsIcon className='text-white size-8' />
             </div>
             <div className='w-[20%] flex items-center justify-center' onClick={() => Move("projectsmove")} >
-                <CodeIcon className='text-white hover:text-pink-600 size-8' />
+                <CodeIcon className='text-white size-8' />
             </div>
             <div className='w-[20%] flex items-center justify-center' onClick={() => Move("contactmove")} >
-                <ConnectWithoutContactIcon className='text-white hover:text-pink-600 size-8' />
+                <ConnectWithoutContactIcon className='text-white size-8' />
             </div>
         </div >
     );
