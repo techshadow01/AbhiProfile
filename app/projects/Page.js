@@ -105,7 +105,7 @@ const Single = ({ item }) => {
 
     const y = useTransform(scrollYProgress, [0, 1], [-250, 250])
 
-    return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] max-sm:h-auto max-sm:py-5 flex items-center justify-center gap-6 text-white max-sm:flex-col max-sm:mt-14' >
+    return <motion.div ref={ref} className='w-[100vw] h-[calc(100vh-250px)] max-sm:h-auto max-sm:py-5 flex items-center justify-center gap-3 text-white max-sm:flex-col max-sm:mt-6' >
         <div className='relative flex items-center justify-center '>
             <motion.div
                 initial={{ x: 40 }}
@@ -151,7 +151,7 @@ const Single = ({ item }) => {
 
 const Page = () => {
 
-    const ref = useRef(null)
+   const ref = useRef(null)
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["end end", "start start"]
@@ -161,19 +161,21 @@ const Page = () => {
         damping: 30
     })
     return (
-        <motion.div id="projectsmove" ref={ref}>
-            <div className='sticky max-sm:relative top-[50px] flex items-center justify-center flex-col gap-3 max-sm:top-[0px] max-sm:trans'
+        <motion.div id="projectsmove" ref={ref} className='flex flex-col max-sm:gap-3'>
+            <div className='sticky max-sm:relative top-[50px] flex items-center justify-center flex-col gap-3 max-sm:top-[0px] max-sm:trans '
                 style={{ zIndex: 10 }}>
                 <div className=' text-white text-center text-5xl flex gap-3'>
                     <div className='text-pink-600 font-bold '>Latest</div>
                     <div className='text-white font-semibold'>Works</div>
                 </div>
-                <motion.div className=' bg-white h-2 w-[95vw] rounded-full' style={{ scaleX }} />
+                <motion.div className='max-sm:hidden bg-white h-2 w-[95vw] rounded-full' style={{ scaleX }} />
             </div >
 
+            <motion.div className='max-sm:sticky mx-auto sm:hidden top-0 bg-white h-2 w-[95vw] rounded-full' style={{ scaleX, zIndex: 10 }} />
+
             <motion.div className='flex items-center justify-center flex-col'>
-                {Project.map((item) => {
-                    return <Single item={item} key={item.id} />
+                {Project.map((item, index) => {
+                    return <Single item={item} key={index} />
                 })}
             </motion.div>
         </motion.div >
