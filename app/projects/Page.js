@@ -113,7 +113,7 @@ const Single = ({ item }) => {
                 viewport={{ once: true, amount: 1 }}
                 className='max-sm:hidden'
             >
-                <Image className='rounded-[10px] ' src={item.img} alt="" width={700} />
+                <Image className='rounded-[10px] max-sm:rounded-none cursor-pointer' src={item.img} alt="" width={700} />
             </motion.div>
 
             <motion.div
