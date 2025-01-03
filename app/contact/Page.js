@@ -38,7 +38,11 @@ const Page = () => {
             </div>
             <ThemeProvider theme={theme}>
                 <div className='w-[50vw] h-[100vh] flex items-center justify-center flex-col gap-4 '>
-                    <div className='text-pink-600 text-5xl font-bold max-sm:font-bold max-sm:text-4xl'>Contact Me</div>
+                     <div className='flex items-center justify-center flex-col gap-4 projecttrans max-sm:w-screen max-sm:h-screen p-4 rounded-lg'>
+                        <div className='text-pink-600 text-5xl flex gap-2 font-bold max-sm:font-bold max-sm:text-3xl'>
+                            <div className='text-white'>Get in</div>
+                            <div>touch</div>
+                        </div>
 
                     <Box sx={{
                         "& .MuiOutlinedInput-root": {
