@@ -25,7 +25,7 @@ const page = () => {
 
   return (
     <div id="homemove" className='relative w-[100vw] h-[100vh]'>
-      <Stars className="w-full h-full fixed -z-20" />
+      <Stars className="w-full h-full " />
       <div className='h-[50px]'></div>
 
       {/* home */}
