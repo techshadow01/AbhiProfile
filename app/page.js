@@ -36,8 +36,22 @@ const page = () => {
 
           {/* home-left-in */}
           <motion.div className=' relative w-[80%] h-[80%] text-white max-sm:w-[100%]'
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1, transition: { duration: 2 } }}
+            // initial={{ y: 50, opacity: 0 }}
+            // animate={{ y: 0, opacity: 1, transition: { duration: 2 } }}
+     initial={{
+              filter: "blur(10px)",
+              opacity: 0,
+              y: 5,
+            }}
+            animate={{
+              filter: "blur(0px)",
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeInOut",
+            }}
           >
             <div className='flex items-start justify-center flex-col gap-5 max-sm:gap-1 h-full  max-sm:items-start'>
               <div className='text-7xl font-bold gap-3 flex items-end  max-sm:text-2xl'>
