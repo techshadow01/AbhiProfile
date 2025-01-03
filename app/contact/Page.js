@@ -114,6 +114,7 @@ const Page = () => {
                         </div>
                     </Box>
                     <div><Button className='rounded-full glow' variant="contained" >Send</Button></div>
+                                         </div>
                 </div>
             </ThemeProvider>
 
