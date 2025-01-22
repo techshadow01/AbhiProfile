@@ -44,7 +44,7 @@ const Project = [{
     title: "Swing",
     img: Swing,
     desc: "Swing is a project fund website connects investors with projects and opportunities to support innovative ventures.",
-    live: "https://fund-website-five.vercel.app/",
+    live: "",
     code: "https://github.com/techshadow01/fund-website",
     text: "text-[#1978D0]",
     tech: [
