@@ -40,7 +40,7 @@ const Project = [{
     ]
 },
 {
-    index1: 'top-[30px]',
+    index1: 'top-[40px]',
     title: "Swing",
     img: Swing,
     desc: "Swing is a project fund website connects investors with projects and opportunities to support innovative ventures.",
@@ -56,7 +56,7 @@ const Project = [{
     ]
 },
 {
-    index1: 'top-[50px]',
+    index1: 'top-[70px]',
     title: "Portofolio",
     img: Portofolio,
     desc: "A portfolio website showcasing my work, skills, and achievements, highlighting expertise and creative projects.",
@@ -71,7 +71,7 @@ const Project = [{
     ]
 },
 {
-    index1: 'top-[70px]',
+    index1: 'top-[100px]',
     title: "Spotify Clone",
     img: Spotify,
     desc: "a Music player that offers seamless playback, high-quality sound, and an intuitive interface. It allows easy navigation through playlists.",
@@ -84,7 +84,7 @@ const Project = [{
         Javascript
     ]
 }, {
-    index1: 'top-[90px]',
+    index1: 'top-[130px]',
     title: "AI ChatBot",
     img: Chat,
     desc: "A good AI chatbot which understands user inputs, provides relevant responses, and adapts to different contexts. ",
