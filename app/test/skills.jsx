@@ -242,7 +242,7 @@ const renderToolCategory = (categoryData) => {
     return categoryData.map((item1, index1) => (
         <motion.div
             key={index1}
-            className={`size-[100px] max-sm:size-[80px] wtrans sm:bg-white sm:bg-opacity-10 text-white rounded-2xl duration-200 flex flex-col text-xl items-center justify-center sm-border border-zinc-800 ${item1.color}`}>
+            className={`size-[100px] max-sm:size-[76px] wtrans sm:bg-white sm:bg-opacity-10 text-white rounded-2xl duration-200 flex flex-col text-xl items-center justify-center sm-border border-zinc-800 ${item1.color}`}>
             <motion.div>
                 <Image className='size-16 max-sm:size-14' src={item1.img} alt="" />
             </motion.div>
