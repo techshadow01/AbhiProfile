@@ -110,7 +110,7 @@ const Single = ({ item }) => {
 
     const y = useTransform(scrollYProgress, [0, 1], [-250, 250])
 
-    return <motion.div ref={ref} className='max-sm:sticky ${item.index1} w-[100vw] h-[calc(100vh-250px)] max-sm:h-auto max-sm:py-5 flex items-center justify-center gap-3 text-white max-sm:flex-col max-sm:mt-6' >
+    return <motion.div ref={ref} className={`max-sm:sticky ${item.index1} w-[100vw] h-[calc(100vh-250px)] max-sm:h-auto max-sm:py-5 flex items-center justify-center gap-3 text-white max-sm:flex-col max-sm:mt-6`}>
         <div className='relative flex items-center justify-center '>
             <motion.div
                 initial={{ x: 40 }}
