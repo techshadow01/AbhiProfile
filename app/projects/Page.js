@@ -25,6 +25,7 @@ import { motion, useScroll, useSpring, useTransform } from "motion/react"
 import BasicModal from './Modal1'
 
 const Project = [{
+    index1: 'top-[10px]',
     title: "Alice AI",
     img: Alice,
     desc: "Transform your projects with our AI image generator. Generate high-quality, AI generated images with unparalleled speed and style ",
@@ -39,6 +40,7 @@ const Project = [{
     ]
 },
 {
+    index1: 'top-[30px]',
     title: "Swing",
     img: Swing,
     desc: "Swing is a project fund website connects investors with projects and opportunities to support innovative ventures.",
@@ -54,6 +56,7 @@ const Project = [{
     ]
 },
 {
+    index1: 'top-[50px]',
     title: "Portofolio",
     img: Portofolio,
     desc: "A portfolio website showcasing my work, skills, and achievements, highlighting expertise and creative projects.",
@@ -68,6 +71,7 @@ const Project = [{
     ]
 },
 {
+    index1: 'top-[70px]',
     title: "Spotify Clone",
     img: Spotify,
     desc: "a Music player that offers seamless playback, high-quality sound, and an intuitive interface. It allows easy navigation through playlists.",
@@ -80,6 +84,7 @@ const Project = [{
         Javascript
     ]
 }, {
+    index1: 'top-[90px]',
     title: "AI ChatBot",
     img: Chat,
     desc: "A good AI chatbot which understands user inputs, provides relevant responses, and adapts to different contexts. ",
@@ -105,7 +110,7 @@ const Single = ({ item }) => {
 
     const y = useTransform(scrollYProgress, [0, 1], [-250, 250])
 
-    return <motion.div ref={ref} className='max-sm:sticky top-[10px] w-[100vw] h-[calc(100vh-250px)] max-sm:h-auto max-sm:py-5 flex items-center justify-center gap-3 text-white max-sm:flex-col max-sm:mt-6' >
+    return <motion.div ref={ref} className='max-sm:sticky ${item.index1} w-[100vw] h-[calc(100vh-250px)] max-sm:h-auto max-sm:py-5 flex items-center justify-center gap-3 text-white max-sm:flex-col max-sm:mt-6' >
         <div className='relative flex items-center justify-center '>
             <motion.div
                 initial={{ x: 40 }}
