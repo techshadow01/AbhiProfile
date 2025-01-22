@@ -259,7 +259,7 @@ const skills = () => {
                 <motion.div
                     className='sticky max-sm:static top-[40vh] flex items-center justify-center uppercase font-bold text-white p-3 m-auto text'>
                     <span class="letter letter-1 max-sm:text-8xl" >S</span>
-                    <span class="letter letter-2 max-sm:text-8xl">K</span>
+                    <span class="letter letter-1 max-sm:text-8xl">K</span>
                     <span class="letter letter-3 max-sm:text-8xl">I</span>
                     <span class="letter letter-4 max-sm:text-8xl">L</span>
                     <span class="letter letter-4 max-sm:text-8xl">L</span>
