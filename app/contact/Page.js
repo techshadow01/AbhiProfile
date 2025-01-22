@@ -64,7 +64,7 @@ const Page = () => {
                                             borderColor: "#991B53",
                                         },
                                     },
-                                }} className='border-white max-sm:w-[80vw]' id="outlined-basic" name="name" value={form.name} label="Name" variant="outlined" onChange={handleChange} /></div>
+                                }} className='border-white max-sm:w-[90vw]' id="outlined-basic" name="name" value={form.name} label="Name" variant="outlined" onChange={handleChange} /></div>
 
                                 <div><TextField
                                     sx={{
@@ -74,7 +74,7 @@ const Page = () => {
                                             },
                                         },
                                     }}
-                                    className='max-sm:w-[80vw]'
+                                    className='max-sm:w-[90vw]'
                                     id="outlined-basic" name="mail" value={form.mail} label="E-mail" variant="outlined" onChange={handleChange} /></div>
 
                                 <div><TextField
@@ -85,7 +85,7 @@ const Page = () => {
                                             },
                                         },
                                     }}
-                                    className='max-sm:w-[80vw]'
+                                    className='max-sm:w-[90vw]'
                                     id="outlined-basic" name="phone" value={form.phone} label="phone no." variant="outlined" onChange={handleChange} /></div>
 
                                 <div><TextField
@@ -96,7 +96,7 @@ const Page = () => {
                                             },
                                         },
                                     }}
-                                    className='max-sm:w-[80vw]'
+                                    className='max-sm:w-[90vw]'
                                     id="outlined-basic" name="sub" value={form.sub} label="Subject" variant="outlined" onChange={handleChange} /></div>
                             </div>
 
@@ -109,7 +109,7 @@ const Page = () => {
                                             },
                                         },
                                     }}
-                                    id="outlined-multiline-flexible" name="msg" value={form.msg} label="Your Message" rows={10.4} multiline className='w-[400px] max-sm:w-[80vw]' onChange={handleChange} />
+                                    id="outlined-multiline-flexible" name="msg" value={form.msg} label="Your Message" rows={10.4} multiline className='w-[400px] max-sm:w-[90vw]' onChange={handleChange} />
                             </div>
                         </div>
                     </Box>
