@@ -80,7 +80,7 @@ const page = () => {
               <div className='flex items-center justify-start gap-3'>
                 <motion.div className='max-sm:hidden'> <a download href="https://drive.google.com/file/d/1EVLWndDgrapcnCMMNDr3f9_VdAjwynxH/view?usp=sharing" target='_blank'><button className='border-slate-400 border rounded-full glow uppercase w-[120px] h-[40px] bg-white bg-opacity-10' >Resume</button></a></motion.div>
                 <motion.div className='max-sm:hidden'> <button className='text-white border-slate-400 border rounded-full glow uppercase w-[120px] h-[40px]  bg-white bg-opacity-10' onClick={() => { Move("contactmove") }}>Hire Me</button></motion.div>
-                <a download href="https://drive.google.com/file/d/1EVLWndDgrapcnCMMNDr3f9_VdAjwynxH/view?usp=sharing" target='_blank'><div className='flex gap-3 sm:hidden'>
+                <a download href="https://drive.google.com/file/d/1K0O5fMyVkdg3H7aZqiZtO_-WRICRMz-k/view?usp=drive_link" target='_blank'><div className='flex gap-3 sm:hidden'>
                   <div className='flex items-center justify-center font-bold text-xl'><div>RESUME</div></div>
                   <div><Image src={Rarrow} alt="" width={30} /></div>
                 </div></a>
