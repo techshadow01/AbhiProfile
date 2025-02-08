@@ -11,7 +11,7 @@ import Alice from './assets/Alice.png'
 import Spotify from './assets/spotify.png'
 import Github from './assets/github.svg'
 import { motion } from "motion/react"
-import Zoom from '@mui/material/Zoom';
+import Grow from '@mui/material/Grow';
 import Share from './assets/share.svg'
 
 const Modal1 = (props) => {
@@ -26,7 +26,7 @@ const Modal1 = (props) => {
                 open={open}
                 onClose={handleClose}
             >
-                <Zoom in={open} className='top-[calc(50%-250px)] left-[5%] absolute z-20 w-[90%]  transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl overflow-hidden'>
+                <Grow in={open} className='top-[calc(50%-250px)] left-[5%] absolute z-20 w-[90%]  transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl overflow-hidden'>
                     <Box className='transform -translate-x-1/2 -translate-y-1/2 '>
                         <button className='absolute text-2xl text-white
                      z-40 right-5 top-5 font-bold' onClick={handleClose}>
@@ -67,7 +67,7 @@ const Modal1 = (props) => {
                             </div>}
                         </motion.div>
                     </Box>
-                </Zoom>
+            </Grow >
             </Modal >
         </div >
     );
