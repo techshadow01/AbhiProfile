@@ -1,5 +1,6 @@
 body {
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+/*     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%); */
+      background: #0E1115;
     overflow-x: hidden;
   }
   
