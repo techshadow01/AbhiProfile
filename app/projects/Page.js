@@ -122,9 +122,12 @@ const Single = ({ item }) => {
             </motion.div>
 
             <motion.div
-                className='sm:hidden w-[95%] shadow-lg '
+                className='sm:hidden relative w-[95%] shadow-lg '
             >
                 <Image className='rounded-[10px] cursor-pointer' src={item.img} alt="" width={700} />
+                    <div className='absolute bottom-5 left-5 z-30 bg-white text-black font-bold inline-block rounded-lg px-2'>
+                    {item.title}
+                </div>
                 <BasicModal item={item} />
             </motion.div>
 
