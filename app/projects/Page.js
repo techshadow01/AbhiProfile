@@ -125,7 +125,7 @@ const Single = ({ item }) => {
                 className='sm:hidden relative w-[95%] shadow-lg'
             >
                 <Image className='rounded-[10px] cursor-pointer' src={item.img} alt="" width={700} />
-                <div className='absolute bottom-3 left-3 z-30 text-white bg-slate-500/40 px-2 rounded-xl font-bold text-xl inline-block'>
+                <div className='absolute bottom-3 left-3 z-30 text-white bg-slate-500/40 px-2 rounded-full font-bold text-xl inline-block'>
                     {item.title}
                 </div>
                 <BasicModal item={item} />
