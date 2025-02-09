@@ -122,7 +122,7 @@ const Single = ({ item }) => {
             </motion.div>
 
             <motion.div
-                className='sm:hidden relative w-[95%] shadow-lg '
+                className='sm:hidden relative w-[95%] shadow-lg image'
             >
                 <Image className='rounded-[10px] cursor-pointer' src={item.img} alt="" width={700} />
                     <div className='absolute bottom-6 left-4 z-30 text-white font-bold text-3xl inline-block'>
